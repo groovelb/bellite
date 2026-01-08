@@ -52,21 +52,25 @@ export const Docs = {
       },
     };
 
-    // 토큰 값 (테이블용)
+    // 토큰 값 (테이블용) - 고정 사이즈 variants
     const tokenValues = [
-      { variant: 'h1', fontSize: theme.typography.h1?.fontSize, fontWeight: theme.typography.h1?.fontWeight, font: 'Display', usage: '히어로 헤드라인' },
-      { variant: 'h2', fontSize: theme.typography.h2?.fontSize, fontWeight: theme.typography.h2?.fontWeight, font: 'Display', usage: '섹션 타이틀' },
-      { variant: 'h3', fontSize: theme.typography.h3?.fontSize, fontWeight: theme.typography.h3?.fontWeight, font: 'Display', usage: '서브섹션 타이틀' },
-      { variant: 'h4', fontSize: theme.typography.h4?.fontSize, fontWeight: theme.typography.h4?.fontWeight, font: 'Display', usage: '카드 타이틀' },
-      { variant: 'h5', fontSize: theme.typography.h5?.fontSize, fontWeight: theme.typography.h5?.fontWeight, font: 'Display', usage: '작은 타이틀' },
-      { variant: 'h6', fontSize: theme.typography.h6?.fontSize, fontWeight: theme.typography.h6?.fontWeight, font: 'Display', usage: '라벨 타이틀' },
-      { variant: 'subtitle1', fontSize: theme.typography.subtitle1?.fontSize, fontWeight: theme.typography.subtitle1?.fontWeight, font: 'Body', usage: '서브타이틀' },
-      { variant: 'subtitle2', fontSize: theme.typography.subtitle2?.fontSize, fontWeight: theme.typography.subtitle2?.fontWeight, font: 'Body', usage: '작은 서브타이틀' },
-      { variant: 'body1', fontSize: theme.typography.body1?.fontSize, fontWeight: theme.typography.body1?.fontWeight, font: 'Body', usage: '본문 텍스트' },
-      { variant: 'body2', fontSize: theme.typography.body2?.fontSize, fontWeight: theme.typography.body2?.fontWeight, font: 'Body', usage: '보조 본문' },
-      { variant: 'button', fontSize: theme.typography.button?.fontSize, fontWeight: theme.typography.button?.fontWeight, font: 'Body', usage: '버튼 텍스트' },
-      { variant: 'caption', fontSize: theme.typography.caption?.fontSize, fontWeight: theme.typography.caption?.fontWeight, font: 'Body', usage: '캡션, 상태 라벨' },
-      { variant: 'overline', fontSize: theme.typography.overline?.fontSize, fontWeight: theme.typography.overline?.fontWeight, font: 'Body', usage: '카테고리, 태그' },
+      { variant: 'h6', fontSize: '1rem', fontWeight: 600, font: 'Body', usage: '라벨 타이틀' },
+      { variant: 'subtitle1', fontSize: '1rem', fontWeight: 500, font: 'Body', usage: '서브타이틀' },
+      { variant: 'subtitle2', fontSize: '0.875rem', fontWeight: 500, font: 'Body', usage: '작은 서브타이틀' },
+      { variant: 'button', fontSize: '0.875rem', fontWeight: 500, font: 'Body', usage: '버튼 텍스트' },
+      { variant: 'caption', fontSize: '0.75rem', fontWeight: 400, font: 'Body', usage: '캡션, 상태 라벨' },
+      { variant: 'overline', fontSize: '0.75rem', fontWeight: 500, font: 'Body', usage: '카테고리, 태그' },
+    ];
+
+    // 반응형 토큰 값 (테이블용)
+    const responsiveTokenValues = [
+      { variant: 'h1', xs: '3.5rem', sm: '5rem', md: '7rem', lg: '9rem', font: 'Display', usage: '히어로 헤드라인' },
+      { variant: 'h2', xs: '1.75rem', sm: '2.5rem', md: '3.5rem', lg: '4.5rem', font: 'Display', usage: '섹션 타이틀' },
+      { variant: 'h3', xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem', font: 'Display', usage: '서브섹션 타이틀' },
+      { variant: 'h4', xs: '1.25rem', sm: '1.5rem', md: '1.75rem', lg: '2rem', font: 'Display', usage: '카드 타이틀' },
+      { variant: 'h5', xs: '1rem', sm: '1.25rem', md: '1.5rem', lg: '1.7rem', font: 'Body', usage: '작은 타이틀' },
+      { variant: 'body1', xs: '1rem', sm: '1.125rem', md: '1.125rem', lg: '1.125rem', font: 'Body', usage: '본문 텍스트' },
+      { variant: 'body2', xs: '0.9375rem', sm: '1rem', md: '1rem', lg: '1rem', font: 'Body', usage: '보조 본문' },
     ];
 
     // Font Weight 데이터
@@ -158,33 +162,69 @@ export const Docs = {
             )) }
           </Box>
 
-          {/* 토큰 값 (테이블) - Typography Scale */}
-          <SectionTitle title="토큰 값" description="Typography variant별 설정" />
+          {/* 반응형 토큰 값 (테이블) */}
+          <SectionTitle title="반응형 Typography Scale" description="브레이크포인트별 자동 조정되는 variants (h1-h5, body1-2)" />
+          <Box sx={ { p: 2, bgcolor: 'grey.50', border: '1px solid', borderColor: 'divider', mb: 2 } }>
+            <Typography variant="body2" color="text.secondary">
+              테마 레벨에서 반응형이 적용되어, <code>variant</code>만 지정하면 화면 크기에 따라 자동으로 fontSize가 조정됩니다.
+            </Typography>
+          </Box>
           <TableContainer sx={ { mb: 4 } }>
-            <Table>
+            <Table size="small">
               <TableHead>
                 <TableRow>
-                  <TableCell sx={ { fontWeight: 600, py: 2 } }>Variant</TableCell>
-                  <TableCell sx={ { fontWeight: 600, py: 2 } }>Font</TableCell>
-                  <TableCell sx={ { fontWeight: 600, py: 2 } }>Size</TableCell>
-                  <TableCell sx={ { fontWeight: 600, py: 2 } }>Weight</TableCell>
-                  <TableCell sx={ { fontWeight: 600, py: 2 } }>Sample</TableCell>
-                  <TableCell sx={ { fontWeight: 600, py: 2 } }>용도</TableCell>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5 } }>Variant</TableCell>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5 } }>Font</TableCell>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5, bgcolor: 'grey.100' } }>xs (&lt;600px)</TableCell>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5, bgcolor: 'grey.100' } }>sm (600px)</TableCell>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5, bgcolor: 'grey.100' } }>md (900px)</TableCell>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5, bgcolor: 'grey.100' } }>lg (1200px+)</TableCell>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5 } }>용도</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                { responsiveTokenValues.map((row) => (
+                  <TableRow key={ row.variant }>
+                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 13, py: 2 } }>{ row.variant }</TableCell>
+                    <TableCell sx={ { fontSize: 12, py: 2 } }>{ row.font }</TableCell>
+                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 12, py: 2, bgcolor: 'grey.50' } }>{ row.xs }</TableCell>
+                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 12, py: 2, bgcolor: 'grey.50' } }>{ row.sm }</TableCell>
+                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 12, py: 2, bgcolor: 'grey.50' } }>{ row.md }</TableCell>
+                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 12, py: 2, bgcolor: 'grey.50' } }>{ row.lg }</TableCell>
+                    <TableCell sx={ { color: 'text.secondary', fontSize: 13, py: 2 } }>{ row.usage }</TableCell>
+                  </TableRow>
+                )) }
+              </TableBody>
+            </Table>
+          </TableContainer>
+
+          {/* 고정 사이즈 토큰 값 (테이블) */}
+          <SectionTitle title="고정 Typography Scale" description="화면 크기와 무관하게 고정 사이즈인 variants" />
+          <TableContainer sx={ { mb: 4 } }>
+            <Table size="small">
+              <TableHead>
+                <TableRow>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5 } }>Variant</TableCell>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5 } }>Font</TableCell>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5 } }>Size</TableCell>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5 } }>Weight</TableCell>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5 } }>Sample</TableCell>
+                  <TableCell sx={ { fontWeight: 600, py: 1.5 } }>용도</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 { tokenValues.map((row) => (
                   <TableRow key={ row.variant }>
-                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 13, py: 2.5 } }>{ row.variant }</TableCell>
-                    <TableCell sx={ { fontSize: 12, py: 2.5 } }>{ row.font }</TableCell>
-                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 13, py: 2.5 } }>{ row.fontSize || '-' }</TableCell>
-                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 13, py: 2.5 } }>{ row.fontWeight || '-' }</TableCell>
-                    <TableCell sx={ { py: 2.5 } }>
+                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 13, py: 2 } }>{ row.variant }</TableCell>
+                    <TableCell sx={ { fontSize: 12, py: 2 } }>{ row.font }</TableCell>
+                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 13, py: 2 } }>{ row.fontSize }</TableCell>
+                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 13, py: 2 } }>{ row.fontWeight }</TableCell>
+                    <TableCell sx={ { py: 2 } }>
                       <Typography variant={ row.variant }>
-                        { row.font === 'Display' ? 'Your Daily Encore' : '구겨지지 않는 당신의 선을 위해' }
+                        구겨지지 않는 당신의 선
                       </Typography>
                     </TableCell>
-                    <TableCell sx={ { color: 'text.secondary', fontSize: 13, py: 2.5 } }>{ row.usage }</TableCell>
+                    <TableCell sx={ { color: 'text.secondary', fontSize: 13, py: 2 } }>{ row.usage }</TableCell>
                   </TableRow>
                 )) }
               </TableBody>

@@ -104,8 +104,8 @@ function RightPanel() {
         textAlign: 'center',
       }}
     >
-      {/* 메인 슬로건 - h2 variant (Adamina) + 중간 패럴랙스 */}
-      <Parallax speed={0.5}>
+      {/* 메인 슬로건 - h2 variant (Adamina) + 미세 패럴랙스 */}
+      <Parallax speed={0.15}>
         <Typography
           variant="h2"
           component="h2"
@@ -130,8 +130,8 @@ function RightPanel() {
         </Typography>
       </Parallax>
 
-      {/* 서브 헤드라인 - body1 variant (Pretendard) + 빠른 패럴랙스 */}
-      <Parallax speed={0.7}>
+      {/* 서브 헤드라인 - body1 variant (Pretendard) + 미세 패럴랙스 */}
+      <Parallax speed={0.2}>
         <Typography
           variant="h5"
           component="p"

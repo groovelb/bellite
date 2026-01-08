@@ -193,50 +193,112 @@ const typography = {
   fontWeightBold: 700,
 
   // Headline Typography (Adamina - 클래식 세리프)
+  // 반응형: xs → sm → md → lg
   h1: {
     fontFamily: headlineFontFamily,
     fontWeight: 400,
-    fontSize: '9rem',       // 72px
+    fontSize: 'clamp(3.5rem, 8vw, 9rem)',  // 56px → 144px
     lineHeight: 1.1,
     letterSpacing: '-0.02em',
+    // 브레이크포인트별 세부 조정
+    '@media (max-width: 600px)': {
+      fontSize: '3.5rem',      // 56px (xs)
+    },
+    '@media (min-width: 600px) and (max-width: 900px)': {
+      fontSize: '5rem',        // 80px (sm)
+    },
+    '@media (min-width: 900px) and (max-width: 1200px)': {
+      fontSize: '7rem',        // 112px (md)
+    },
+    '@media (min-width: 1200px)': {
+      fontSize: '9rem',        // 144px (lg+)
+    },
   },
 
   h2: {
     fontFamily: headlineFontFamily,
     fontWeight: 400,
-    fontSize: '4.5rem',         // 48px
+    fontSize: 'clamp(1.75rem, 4vw, 4.5rem)',  // 28px → 72px
     lineHeight: 1.15,
     letterSpacing: '-0.02em',
+    '@media (max-width: 600px)': {
+      fontSize: '1.75rem',     // 28px (xs)
+    },
+    '@media (min-width: 600px) and (max-width: 900px)': {
+      fontSize: '2.5rem',      // 40px (sm)
+    },
+    '@media (min-width: 900px) and (max-width: 1200px)': {
+      fontSize: '3.5rem',      // 56px (md)
+    },
+    '@media (min-width: 1200px)': {
+      fontSize: '4.5rem',      // 72px (lg+)
+    },
   },
 
   h3: {
     fontFamily: headlineFontFamily,
     fontWeight: 400,
-    fontSize: '3rem',      // 36px
+    fontSize: 'clamp(1.5rem, 3vw, 3rem)',  // 24px → 48px
     lineHeight: 1.2,
     letterSpacing: '-0.01em',
+    '@media (max-width: 600px)': {
+      fontSize: '1.5rem',      // 24px (xs)
+    },
+    '@media (min-width: 600px) and (max-width: 900px)': {
+      fontSize: '2rem',        // 32px (sm)
+    },
+    '@media (min-width: 900px) and (max-width: 1200px)': {
+      fontSize: '2.5rem',      // 40px (md)
+    },
+    '@media (min-width: 1200px)': {
+      fontSize: '3rem',        // 48px (lg+)
+    },
   },
 
   h4: {
     fontFamily: headlineFontFamily,
     fontWeight: 400,
-    fontSize: '2rem',      // 28px
+    fontSize: 'clamp(1.25rem, 2vw, 2rem)',  // 20px → 32px
     lineHeight: 1.3,
     letterSpacing: '-0.01em',
+    '@media (max-width: 600px)': {
+      fontSize: '1.25rem',     // 20px (xs)
+    },
+    '@media (min-width: 600px) and (max-width: 900px)': {
+      fontSize: '1.5rem',      // 24px (sm)
+    },
+    '@media (min-width: 900px) and (max-width: 1200px)': {
+      fontSize: '1.75rem',     // 28px (md)
+    },
+    '@media (min-width: 1200px)': {
+      fontSize: '2rem',        // 32px (lg+)
+    },
   },
 
   h5: {
     fontFamily: bodyFontFamily,
     fontWeight: 600,
-    fontSize: '1.7rem',      // 20px
+    fontSize: 'clamp(1rem, 1.5vw, 1.7rem)',  // 16px → 27px
     lineHeight: 1.4,
     letterSpacing: '0',
+    '@media (max-width: 600px)': {
+      fontSize: '1rem',        // 16px (xs)
+    },
+    '@media (min-width: 600px) and (max-width: 900px)': {
+      fontSize: '1.25rem',     // 20px (sm)
+    },
+    '@media (min-width: 900px) and (max-width: 1200px)': {
+      fontSize: '1.5rem',      // 24px (md)
+    },
+    '@media (min-width: 1200px)': {
+      fontSize: '1.7rem',      // 27px (lg+)
+    },
   },
 
   h6: {
     fontFamily: bodyFontFamily,
     fontWeight: 600,
-    fontSize: '1rem',         // 16px
+    fontSize: '1rem',         // 16px (고정)
     lineHeight: 1.5,
     letterSpacing: '0',
   },
@@ -264,6 +326,9 @@ const typography = {
     fontWeight: 400,
     lineHeight: 1.7,
     letterSpacing: '0',
+    '@media (max-width: 600px)': {
+      fontSize: '1rem',       // 16px (xs)
+    },
   },
 
   body2: {
@@ -272,6 +337,9 @@ const typography = {
     fontWeight: 400,
     lineHeight: 1.7,
     letterSpacing: '0',
+    '@media (max-width: 600px)': {
+      fontSize: '0.9375rem',  // 15px (xs)
+    },
   },
 
   button: {

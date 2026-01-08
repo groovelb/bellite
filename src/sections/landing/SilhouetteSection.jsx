@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Box, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import VideoSlide from '../../components/media/VideoSlide';
 import SectionTitle from '../../components/typography/SectionTitle';
@@ -74,42 +74,37 @@ function VideoSlideContainer({ slide, width = '60vw', slideIndex, totalSlides })
           bottom: 0,
           left: 0,
           right: 0,
-          p: { xs: 3, md: 5 },
+          p: { xs: 3, sm: 4, md: 5 },
           background: 'linear-gradient(to top, rgba(15, 15, 15, 0.95) 0%, rgba(15, 15, 15, 0.7) 50%, rgba(15, 15, 15, 0.3) 80%, transparent 100%)',
           zIndex: 1,
         }}
       >
-        {/* 영문 타이틀 - Adamina 세리프 Bold */}
-        <Box
+        {/* 영문 타이틀 - h3 variant (Adamina 세리프) */}
+        <Typography
           component={motion.h3}
+          variant="h3"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ amount: 0.75, once: true }}
           transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           sx={{
-            fontFamily: 'Adamina, Georgia, serif',
-            fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' },
             fontWeight: 700,
             color: 'brand.soul',
-            letterSpacing: '-0.02em',
-            lineHeight: 1.1,
             m: 0,
             mb: 2,
           }}
         >
           {slide.titleEn}
-        </Box>
-        {/* 한글 설명 - Pretendard 산세리프 */}
-        <Box
+        </Typography>
+        {/* 한글 설명 - body2 variant (Pretendard) */}
+        <Typography
           component={motion.p}
+          variant="body2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ amount: 0.75, once: true }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
           sx={{
-            fontFamily: 'Pretendard Variable, sans-serif',
-            fontSize: { xs: '0.875rem', md: '1rem' },
-            fontWeight: 400,
             color: 'rgba(255, 241, 254, 0.85)',
             lineHeight: 1.6,
             m: 0,
@@ -117,7 +112,7 @@ function VideoSlideContainer({ slide, width = '60vw', slideIndex, totalSlides })
           }}
         >
           {slide.description}
-        </Box>
+        </Typography>
       </Box>
     </VideoSlide>
   );

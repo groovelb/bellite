@@ -1,9 +1,9 @@
 import { Box, Typography } from '@mui/material';
 import MaskRevealSection from './MaskRevealSection';
 
-// 샘플 이미지 (실제 에셋으로 교체 필요)
-import s2Image1 from '../../assets/s2/s2-1.png';
-import s2Image2 from '../../assets/s2/s2-2.png';
+// 샘플 이미지
+import s2Image1 from '../../assets/s2/s1.jpeg';
+import s2Image2 from '../../assets/s2/s2.jpeg';
 
 export default {
   title: 'Custom Component/MaskRevealSection',
