@@ -174,6 +174,29 @@ const COMPONENT_SUMMARY = {
   'Internal Components': ['LeftPanel', 'RightPanel', 'ScrollIndicator', 'VideoBackground', 'ImageBackground', 'CenterContent', 'PillarCard', 'VideoSlideContainer', 'TextBlock', 'ImageBlock', 'Word', 'ProgressIndicator'],
 };
 
+// 외부 라이브러리
+const EXTERNAL_LIBRARIES = {
+  '@mui/material': {
+    components: ['Box', 'Typography', 'Grid', 'Stack', 'Drawer', 'List', 'ListItem', 'ListItemButton', 'ListItemText', 'IconButton', 'Container', 'Divider', 'Collapse'],
+    hooks: ['useTheme', 'useMediaQuery'],
+    version: '^7.x',
+  },
+  'framer-motion': {
+    components: ['motion'],
+    hooks: ['useScroll', 'useTransform'],
+    version: '^11.x',
+  },
+  'lucide-react': {
+    icons: ['ChevronDown', 'Minus', 'Archive', 'Sparkle', 'Menu', 'X'],
+    version: '^0.x',
+  },
+  '@fiddle-digital/string-tune': {
+    modules: ['StringTune', 'StringParallax'],
+    components: ['Parallax'],
+    version: 'custom',
+  },
+};
+
 export const Default = {
   render: () => (
     <Box sx={{ maxWidth: 900, mx: 'auto' }}>
@@ -257,6 +280,97 @@ export const Default = {
                   {comp}
                 </Typography>
               ))}
+            </Box>
+          ))}
+        </Box>
+      </Box>
+
+      <Divider sx={{ my: 3 }} />
+
+      {/* 외부 라이브러리 */}
+      <Box sx={{ mb: 4 }}>
+        <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
+          External Libraries
+        </Typography>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+          {Object.entries(EXTERNAL_LIBRARIES).map(([lib, info]) => (
+            <Box
+              key={lib}
+              sx={{
+                bgcolor: 'grey.50',
+                p: 2,
+                borderRadius: 1,
+                border: '1px solid',
+                borderColor: 'divider',
+              }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+                <Typography
+                  sx={{
+                    fontFamily: 'monospace',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    color: 'primary.main',
+                  }}
+                >
+                  {lib}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: 'monospace',
+                    fontSize: '11px',
+                    color: 'text.secondary',
+                    bgcolor: 'grey.200',
+                    px: 0.75,
+                    py: 0.25,
+                    borderRadius: 0.5,
+                  }}
+                >
+                  {info.version}
+                </Typography>
+              </Box>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+                {info.components && (
+                  <Box>
+                    <Typography sx={{ fontSize: '11px', color: 'text.secondary', mb: 0.5 }}>
+                      Components
+                    </Typography>
+                    <Typography sx={{ fontFamily: 'monospace', fontSize: '12px' }}>
+                      {info.components.join(', ')}
+                    </Typography>
+                  </Box>
+                )}
+                {info.hooks && (
+                  <Box>
+                    <Typography sx={{ fontSize: '11px', color: 'text.secondary', mb: 0.5 }}>
+                      Hooks
+                    </Typography>
+                    <Typography sx={{ fontFamily: 'monospace', fontSize: '12px' }}>
+                      {info.hooks.join(', ')}
+                    </Typography>
+                  </Box>
+                )}
+                {info.icons && (
+                  <Box>
+                    <Typography sx={{ fontSize: '11px', color: 'text.secondary', mb: 0.5 }}>
+                      Icons
+                    </Typography>
+                    <Typography sx={{ fontFamily: 'monospace', fontSize: '12px' }}>
+                      {info.icons.join(', ')}
+                    </Typography>
+                  </Box>
+                )}
+                {info.modules && (
+                  <Box>
+                    <Typography sx={{ fontSize: '11px', color: 'text.secondary', mb: 0.5 }}>
+                      Modules
+                    </Typography>
+                    <Typography sx={{ fontFamily: 'monospace', fontSize: '12px' }}>
+                      {info.modules.join(', ')}
+                    </Typography>
+                  </Box>
+                )}
+              </Box>
             </Box>
           ))}
         </Box>
