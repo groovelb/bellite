@@ -49,6 +49,15 @@ import signatureMoodboard1 from '../assets/signature/moodbaord1.jpeg';
 import signatureMoodboard2 from '../assets/signature/moodbaord2.jpeg';
 
 // ============================================================
+// Daily Mood Section Assets (브랜드 철학)
+// ============================================================
+import dailyMoodMorning from '../assets/dialy-mood/mood1_morning.jpeg';
+import dailyMoodDesk from '../assets/dialy-mood/mood2_desk.jpeg';
+import dailyMoodCommute from '../assets/dialy-mood/mood3_commute.jpeg';
+import dailyMoodAfterBallet from '../assets/dialy-mood/mood4_afet_ballete.jpeg';
+import dailyMoodHome from '../assets/dialy-mood/mood5_home.jpeg';
+
+// ============================================================
 // Media Assets Export
 // ============================================================
 
@@ -115,6 +124,33 @@ export const mediaAssets = {
       { id: 'moodboard1', src: signatureMoodboard1, alt: 'Moodboard 1' },
       { id: 'moodboard2', src: signatureMoodboard2, alt: 'Moodboard 2' },
     ],
+  },
+
+  // Daily Mood Section (브랜드 철학 - 3개 시리즈)
+  dailyMood: {
+    // 개별 이미지 접근
+    images: {
+      morning: dailyMoodMorning,
+      desk: dailyMoodDesk,
+      commute: dailyMoodCommute,
+      afterBallet: dailyMoodAfterBallet,
+      home: dailyMoodHome,
+    },
+    // 시리즈별 이미지 그룹
+    series: {
+      // 01. 아침을 설레게하는 발레
+      morningRitual: {
+        images: [dailyMoodMorning],
+      },
+      // 02. 실용적 낭만주의
+      practicalRomanticism: {
+        images: [dailyMoodDesk, dailyMoodCommute],
+      },
+      // 03. 삶의 균형
+      lifeInBalance: {
+        images: [dailyMoodAfterBallet, dailyMoodHome],
+      },
+    },
   },
 };
 

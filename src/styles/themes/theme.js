@@ -26,7 +26,7 @@ const BRAND_COLORS = {
   soul: '#FDEFFB',           // Ballet Pink - 발레리나의 살결과 토슈즈
   urban: '#0F0F0F',          // Deep Black - 도심의 밤
   ribbon: '#f4d2ca',         // Rose Gold - 액센트, 자수 로고
-  blush: '#D4B8BA',          // Soft Pink - 옅은 핑크, 강조용
+  blush: '#E4A8AA',          // Soft Pink - 옅은 핑크, 강조용
 
   // Extended Palette
   soulLight: '#FAF0ED',      // 카드 배경, 호버 상태

@@ -112,7 +112,7 @@ function PillarCard({ pillar, index }) {
         sx={{
           fontFamily: 'Adamina, Georgia, serif',
           fontSize: '0.75rem',
-          color: 'brand.ribbon',
+          color: 'brand.blush',
           letterSpacing: '0.15em',
           mb: 1.5,
         }}
@@ -169,7 +169,7 @@ function PillarCard({ pillar, index }) {
           fontFamily: 'Pretendard Variable, sans-serif',
           fontSize: { xs: '0.85rem', sm: '0.9rem', md: '1rem' },
           fontWeight: 600,
-          color: 'brand.ribbon',
+          color: 'brand.blush',
           letterSpacing: '0.04em',
           mb: 1.5,
         }}

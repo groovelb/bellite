@@ -118,7 +118,7 @@ function TextBlock({ h1, h2, description, align = 'left' }) {
           fontFamily: 'Pretendard Variable, sans-serif',
           fontSize: { xs: '0.9rem', md: '1rem' },
           fontWeight: 500,
-          color: 'brand.ribbon',
+          color: 'brand.blush',
           letterSpacing: '0.02em',
           mb: 3,
           textAlign: align,

@@ -96,6 +96,7 @@ Bellite 랜딩 페이지 전용 컴포넌트. 스크롤 애니메이션 및 인�
 - SilhouetteSection: 무너지지 않는 실루엣. 가로 스크롤 비디오 슬라이드 + MarqueeText 타이틀 (`sections/landing/SilhouetteSection.jsx`)
 - InsideMoodSection: 내부 오브제 무드보드. StickyBackground + VideoScrubbing. 브릿지 역할 (`sections/landing/InsideMoodSection.jsx`)
 - SignatureSection: 구겨지지 않는 보관 & 심미적 표현. SectionContainer(풀블리드) + 2x2 그리드 레이아웃 (`sections/landing/SignatureSection.jsx`)
+- DailyMoodSection: 브랜드 철학 시리즈. CenteredAsideLayout + framer-motion. 3개 시리즈 (Morning Ritual, Practical Romanticism, Life in Balance) (`sections/landing/DailyMoodSection.jsx`)
 - OriginSection: 브랜드 기원. 스크롤 기반 키네틱 타이포그래피 + 단어별 opacity 애니메이션 (`sections/landing/OriginSection.jsx`)
 
 ### Card
@@ -104,7 +105,7 @@ Bellite 랜딩 페이지 전용 컴포넌트. 스크롤 애니메이션 및 인�
 
 ### Pages
 
-- LandingPage: Bellite 메인 랜딩 페이지. 6개 섹션 조합 (`pages/LandingPage.jsx`)
+- LandingPage: Bellite 메인 랜딩 페이지. 8개 섹션 조합 (`pages/LandingPage.jsx`)
 
 ### Data
 

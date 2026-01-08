@@ -192,6 +192,7 @@ function SilhouetteSection() {
             sx={{
               '& .MuiTypography-root': {
                 wordSpacing: '0.5em',
+                color: 'brand.blush',
               },
             }}
           >
