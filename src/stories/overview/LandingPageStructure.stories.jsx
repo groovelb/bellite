@@ -162,6 +162,7 @@ const FILE_PATHS = {
   SignatureSection: 'src/sections/landing/SignatureSection.jsx',
   OriginSection: 'src/sections/landing/OriginSection.jsx',
   DailyMoodSection: 'src/sections/landing/DailyMoodSection.jsx',
+  'FooterSection (미사용)': 'src/sections/landing/FooterSection.jsx',
 };
 
 // 사용 컴포넌트 요약 (실제 import 기반)

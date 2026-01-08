@@ -45,6 +45,7 @@
 - ImageCarousel: 이미지 캐로셀 (`components/media/ImageCarousel.jsx`)
 - ImageTransition: 이미지 트랜지션 효과 (`components/media/ImageTransition.jsx`)
 - VideoScrubbing: 비디오 스크러빙 (`components/media/VideoScrubbing.jsx`)
+- VideoSlide: 가로 스크롤용 비디오 슬라이드. HorizontalScroll 내부에서 세로 스크롤 진행도 기반 비디오 스크러빙. slideIndex, totalSlides 지원 (`components/media/VideoSlide.jsx`)
 - CarouselIndicator: 캐로셀 인디케이터 (`components/media/CarouselIndicator.jsx`)
 - HorizontalScroll: 세로 스크롤 → 가로 이동 변환 컨테이너. framer-motion 사용 (`components/media/HorizontalScroll.jsx`)
 - MaskRevealSection: 스크롤 기반 마스킹 전환. 원형 마스크 확장 + 핫스팟. framer-motion useScroll/useTransform (`components/media/MaskRevealSection.jsx`)
@@ -99,6 +100,7 @@ Bellite 랜딩 페이지 전용 컴포넌트. 스크롤 애니메이션 및 인�
 - SignatureSection: 구겨지지 않는 보관 & 심미적 표현. SectionContainer(풀블리드) + 2x2 그리드 레이아웃 (`sections/landing/SignatureSection.jsx`)
 - DailyMoodSection: Coming Soon 섹션. BrokenGridGallery + MouseParallax. 9개 이미지 비정형 배치 (`sections/landing/DailyMoodSection.jsx`)
 - OriginSection: 브랜드 기원. 스크롤 기반 키네틱 타이포그래피 + 단어별 opacity 애니메이션 (`sections/landing/OriginSection.jsx`)
+- FooterSection: 브랜드 클로징 푸터. 미니멀 레이아웃 + 페이드 아웃 효과. 현재 LandingPage에 미포함 (`sections/landing/FooterSection.jsx`)
 
 ### Card
 
