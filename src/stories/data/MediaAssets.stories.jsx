@@ -97,7 +97,7 @@ const AssetCard = ({ asset, type, basePath, onCopy }) => {
           type={type}
           src={asset.src}
           alt={asset.name}
-          aspectRatio={asset.ratio}
+          aspectRatio="auto"
           isAutoPlay={type === 'video'}
           isMuted
           isLoop={type === 'video'}

@@ -1,9 +1,32 @@
 import { useRef } from 'react';
 import { Box, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
 import StickyBackground from '../../components/layout/StickyBackground';
 import VideoScrubbing from '../../components/media/VideoScrubbing';
 import landingContent from '../../data/landingPageContent.json';
 import { mediaAssets } from '../../data/mediaAssets';
+
+// Motion 컴포넌트
+const MotionBox = motion.create(Box);
+const MotionTypography = motion.create(Typography);
+
+// 애니메이션 variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] },
+  },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+  },
+};
 
 /**
  * InsideMoodSection - 내부 오브제 무드보드 (분위기 전환 섹션)
@@ -59,11 +82,15 @@ function VideoBackground({ containerRef }) {
 
 /**
  * CenterContent - 중앙 메인 콘텐츠
- * StickyBackground가 위치를 제어하므로 자체 애니메이션 없음
+ * framer-motion으로 fade-in 효과 적용
  */
 function CenterContent() {
   return (
-    <Box
+    <MotionBox
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
       sx={{
         position: 'relative',
         zIndex: 2,
@@ -73,8 +100,9 @@ function CenterContent() {
       }}
     >
       {/* 메인 타이틀 */}
-      <Typography
+      <MotionTypography
         component="h2"
+        variants={fadeInUp}
         sx={{
           fontFamily: 'Adamina, Georgia, serif',
           fontSize: { xs: '1.75rem', sm: '2.25rem', md: '3rem', lg: '3.5rem' },
@@ -86,10 +114,11 @@ function CenterContent() {
         }}
       >
         {CONTENT.h1}
-      </Typography>
+      </MotionTypography>
 
       {/* 서브 텍스트 */}
-      <Typography
+      <MotionTypography
+        variants={fadeInUp}
         sx={{
           fontFamily: 'Pretendard Variable, sans-serif',
           fontSize: { xs: '0.875rem', md: '1rem' },
@@ -104,8 +133,8 @@ function CenterContent() {
         }}
       >
         {CONTENT.subText}
-      </Typography>
-    </Box>
+      </MotionTypography>
+    </MotionBox>
   );
 }
 

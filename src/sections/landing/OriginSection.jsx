@@ -58,10 +58,6 @@ function Word({ word, index, totalWords, scrollProgress }) {
       sx={{
         display: 'inline-block',
         mr: '0.3em',
-        // 따옴표가 포함된 단어는 특별 스타일
-        ...(word.includes('"') && {
-          color: 'brand.ribbon',
-        }),
       }}
     >
       {word}

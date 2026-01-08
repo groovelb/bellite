@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import VideoSlide from '../../components/media/VideoSlide';
-import SectionTitle from '../../components/typography/SectionTitle';
+import MarqueeText from '../../components/typography/MarqueeText';
 import { BRAND_COLORS } from '../../styles/themes/theme';
 import landingContent from '../../data/landingPageContent.json';
 import { videoFileMap } from '../../data/mediaAssets';
@@ -176,8 +176,28 @@ function SilhouetteSection() {
           py: { xs: 4, md: 6 },
         }}
       >
-        {/* 섹션 타이틀 */}
-        <SectionTitle title="Unbroken Line" />
+        {/* 섹션 타이틀 - 스크롤 연동 마키 텍스트 (부모 스크롤 진행도 사용) */}
+        <Box
+          sx={{
+            borderBottom: '1px solid',
+            borderColor: 'brand.urban',
+            pb: { xs: 3, md: 4 },
+          }}
+        >
+          <MarqueeText
+            scrollDirection="left"
+            scrollProgress={scrollYProgress}
+            separator="   "
+            letterSpacing="-0.08em"
+            sx={{
+              '& .MuiTypography-root': {
+                wordSpacing: '0.5em',
+              },
+            }}
+          >
+            Unbroken Line
+          </MarqueeText>
+        </Box>
 
         {/* 가로 슬라이드 트랙 */}
         <Box

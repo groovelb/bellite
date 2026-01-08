@@ -65,6 +65,7 @@
 - Title: 타이틀 컴포넌트 (`components/typography/Title.jsx`)
 - QuotedContainer: 인용 컨테이너 (`components/typography/QuotedContainer.jsx`)
 - SectionTitle: 섹션 타이틀. Adamina 세리프, 중앙 정렬, 반응형 폰트 사이즈 (`components/typography/SectionTitle.jsx`)
+- MarqueeText: 스크롤 연동 무한 텍스트. 스크롤 방향에 따라 텍스트 이동. scrollDirection, speed, separator 지원 (`components/typography/MarqueeText.jsx`)
 
 ### Shared (범용)
 
@@ -92,7 +93,7 @@ Bellite 랜딩 페이지 전용 컴포넌트. 스크롤 애니메이션 및 인�
 
 - HeroSection: 풀스크린 히어로. StickyBackground + SplitScreen + VideoScrubbing. 대형 로고 + 배경 비디오/이미지 (`sections/landing/HeroSection.jsx`)
 - ValuePillarsSection: 세 가지 약속 브릿지 섹션. ContentArea(md) + 3컬럼 카드 그리드. framer-motion stagger 애니메이션 (`sections/landing/ValuePillarsSection.jsx`)
-- SilhouetteSection: 무너지지 않는 실루엣. 가로 스크롤 비디오 슬라이드 + SectionTitle (`sections/landing/SilhouetteSection.jsx`)
+- SilhouetteSection: 무너지지 않는 실루엣. 가로 스크롤 비디오 슬라이드 + MarqueeText 타이틀 (`sections/landing/SilhouetteSection.jsx`)
 - InsideMoodSection: 내부 오브제 무드보드. StickyBackground + VideoScrubbing. 브릿지 역할 (`sections/landing/InsideMoodSection.jsx`)
 - SignatureSection: 구겨지지 않는 보관 & 심미적 표현. SectionContainer(풀블리드) + 2x2 그리드 레이아웃 (`sections/landing/SignatureSection.jsx`)
 - OriginSection: 브랜드 기원. 스크롤 기반 키네틱 타이포그래피 + 단어별 opacity 애니메이션 (`sections/landing/OriginSection.jsx`)
