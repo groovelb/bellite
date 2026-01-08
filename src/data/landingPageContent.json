@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "brand": "Bellite",
+    "concept": "발레가 끝나도, 구겨지지 않는 당신의 선을 위해",
+    "description": "Hero에서 브랜드를 선언하고, 3가지 가치로 약속을 전달한 뒤, 외부의 선(실루엣)과 내부의 선(수납)을 순차적으로 증명하는 서사 구조"
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero: Identity & Mission",
+      "order": 1,
+      "content": {
+        "h1": "Your Daily Encore.",
+        "h2": "발레가 끝나도, 구겨지지 않는 당신의 선을 위해.",
+        "message": "스튜디오의 곧은 선이 일상으로 이어지는 순간. 10년 차 발레인의 감각으로 설계한 가장 우아한 수납의 기술을 경험하세요."
+      }
+    },
+    {
+      "id": "valuePillars",
+      "name": "Value Pillars: The Three Promises",
+      "order": 2,
+      "content": {
+        "h1": "The Three Promises"
+      },
+      "pillars": [
+        {
+          "id": "unbrokenLine",
+          "titleEn": "Unbroken Line",
+          "titleKo": "무너지지 않는 실루엣",
+          "description": "특수 보강 설계로 가방 하단이 처지지 않습니다. 당신의 곧은 어깨선을 지켜냅니다.",
+          "icon": "horizontalLine",
+          "linkedSection": "silhouette"
+        },
+        {
+          "id": "thoughtfulArchive",
+          "titleEn": "Thoughtful Archive",
+          "titleKo": "구겨지지 않는 보관",
+          "description": "토슈즈 전용 독립 포켓과 입체적 수납 구조. 소중한 오브제들이 섞이지 않게 보호합니다.",
+          "icon": "archive",
+          "linkedSection": "archive"
+        },
+        {
+          "id": "internalizedDiscipline",
+          "titleEn": "Internalized Discipline",
+          "titleKo": "내재적 자부심",
+          "description": "한 땀씩 수놓인 자수 로고. 발레를 아는 사람만이 공유하는 절제된 우아함.",
+          "icon": "needle",
+          "linkedSection": "signature"
+        }
+      ]
+    },
+    {
+      "id": "silhouette",
+      "name": "Outside: The Silhouette",
+      "nameKo": "외부의 선",
+      "order": 3,
+      "valueConnection": "unbrokenLine",
+      "content": {
+        "h1": "노트북을 담아도, 당신의 에폴망(Épaulement)은 무너지지 않습니다.",
+        "h2": "가방 하단 처짐 방지로 지켜내는 어깨선.",
+        "description": "무거운 짐을 넣으면 가방은 처지고 어깨는 말리기 마련입니다. 벨라이트는 특수 보강재를 삽입하여 어떤 무게에도 수평의 라인을 유지합니다. 가방의 선이 살아야 당신의 자세도 비로소 자유로워집니다."
+      },
+      "slides": [
+        {
+          "id": "crosswalk",
+          "image": "s1.jpeg",
+          "video": "s1.mp4",
+          "titleEn": "Relevé at the Crosswalk",
+          "titleKo": "수직으로 세운 자부심",
+          "description": "하부 보강재가 노트북의 무게를 수평으로 지탱하여, 발끝을 높게 세워도 어깨선이 아래로 처지지 않습니다.",
+          "value": "하단 처짐 방지(No-Sag) 기술"
+        },
+        {
+          "id": "subway",
+          "image": "s2.jpeg",
+          "video": "s2.mp4",
+          "titleEn": "Épaulement in the Subway",
+          "titleKo": "흔들림 없는 에폴망",
+          "description": "복잡한 이동 수단 안에서도 가방의 견고한 직선이 당신의 정돈된 자세를 단단하게 지지합니다.",
+          "value": "자세 지지력(Posture Support)"
+        },
+        {
+          "id": "cafe",
+          "image": "s3.jpeg",
+          "video": "s3.mp4",
+          "titleEn": "Tendu at the Cafe",
+          "titleKo": "일상의 끝까지 뻗은 텐션",
+          "description": "커피를 건네받는 가벼운 찰나에도 소지품의 무게에 휘둘리지 않는 유려한 몸의 선을 유지합니다.",
+          "value": "무게 중심의 안정성(Weight Balance)"
+        },
+        {
+          "id": "stairs",
+          "image": "s4.jpeg",
+          "video": "s4.mp4",
+          "titleEn": "Passé on the Stairs",
+          "titleKo": "정교하게 설계된 실루엣",
+          "description": "15인치 노트북을 담고도 변함없는 가방의 기하학적 형태가 당신의 프로페셔널한 안목을 증명합니다.",
+          "value": "형태 보존성(Structural Integrity)"
+        }
+      ]
+    },
+    {
+      "id": "insideMood",
+      "name": "Inside Mood: The Objects",
+      "nameKo": "내부 오브제",
+      "order": 4,
+      "content": {
+        "sectionLabel": "Inside the Bag",
+        "h1": "당신의 낭만을 담는 공간.",
+        "subText": "토슈즈, 리본, 타이즈 —\n당신의 하루를 함께한 모든 것들이\n제자리를 찾는 순간."
+      },
+      "floatingObjects": [
+        { "word": "Pointe Shoes", "x": "12%", "y": "18%", "size": "sm", "delay": 0 },
+        { "word": "리본", "x": "78%", "y": "22%", "size": "md", "delay": 0.1 },
+        { "word": "Tights", "x": "22%", "y": "72%", "size": "sm", "delay": 0.2 },
+        { "word": "레오타드", "x": "85%", "y": "65%", "size": "sm", "delay": 0.15 },
+        { "word": "Hairpins", "x": "8%", "y": "45%", "size": "xs", "delay": 0.25 },
+        { "word": "바디밴드", "x": "88%", "y": "42%", "size": "xs", "delay": 0.3 },
+        { "word": "Warmers", "x": "18%", "y": "88%", "size": "xs", "delay": 0.35 },
+        { "word": "토슈즈", "x": "75%", "y": "82%", "size": "md", "delay": 0.05 }
+      ]
+    },
+    {
+      "id": "archive",
+      "name": "Inside: The Archive",
+      "nameKo": "내부의 선",
+      "order": 5,
+      "valueConnection": "thoughtfulArchive",
+      "content": {
+        "h1": "실루엣 뒤에 숨겨진 정교함, 당신의 낭만은 눌리지 않아야 하니까.",
+        "h2": "발레 오브제들을 위한 전용 큐레이션 박스.",
+        "description": "겉모습만 우아한 것이 아닙니다. 땀에 젖은 타이즈와 소중한 토슈즈가 일상의 노트북과 섞이지 않도록 내부 공간을 완전히 재설계했습니다. 벨라이트의 내부는 당신이 배운 우아함을 그대로 보존하는 큐레이션 박스가 됩니다."
+      },
+      "storagePoints": [
+        {
+          "id": "toeshoes",
+          "title": "토슈즈 전용 포켓",
+          "description": "독립된 통기성 공간에서 형태 보존"
+        },
+        {
+          "id": "tights",
+          "title": "타이즈/레오타드 섹션",
+          "description": "젖은 의류가 다른 물건에 닿지 않도록 분리"
+        },
+        {
+          "id": "laptop",
+          "title": "노트북 슬리브",
+          "description": "15인치까지 안전하게 수납"
+        },
+        {
+          "id": "accessories",
+          "title": "소품 포켓",
+          "description": "헤어핀, 리본, 바디 밴드 등 작은 오브제 정리"
+        }
+      ]
+    },
+    {
+      "id": "signature",
+      "name": "Style: The Signature",
+      "nameKo": "심미적 표현",
+      "order": 6,
+      "valueConnection": "internalizedDiscipline",
+      "content": {
+        "h1": "입지 않아도 드러나는 내면의 발레코어.",
+        "h2": "핑크와 블랙, 그리고 한 땀씩 새긴 자수의 자부심.",
+        "description": "화려한 프릴 없이도 당신이 발레인임을 증명하는 방법. 10년 수련의 시간을 상징하는 셰리프 필기체 자수가 당신의 정체성을 우아하게 드러냅니다. 기계적인 프린팅이 아닌, 손끝의 질감이 느껴지는 자수의 온기를 느껴보세요."
+      }
+    },
+    {
+      "id": "origin",
+      "name": "Origin: Designer's Note",
+      "nameKo": "브랜드 기원",
+      "order": 7,
+      "content": {
+        "h1": "레페토의 낭만과 보스턴백의 효율, 그 사이의 완벽한 답.",
+        "h2": "거북목 교정 10년, 직접 써보며 고친 디테일들.",
+        "description": "\"왜 비싼 발레백에는 노트북이 들어가지 않을까?\" 이 질문에서 시작된 벨라이트는 디자이너의 눈과 발레인의 마음으로 완성되었습니다. 고가의 명품이 아니더라도, 당신의 안목을 증명하기에 충분한 퀄리티를 약속합니다."
+      }
+    },
+    {
+      "id": "footer",
+      "name": "Footer: Maintain the Line",
+      "order": 8,
+      "content": {
+        "h1": "Maintain the Line.",
+        "h2": "당신의 모든 순간이 발레가 되도록."
+      }
+    }
+  ]
+}

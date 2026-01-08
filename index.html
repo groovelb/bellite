@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 브라우저 강제 다크모드 비활성화 -->
+    <meta name="color-scheme" content="only light" />
+    <meta name="supported-color-schemes" content="light" />
+    <!-- Dark Reader 확장 프로그램 비활성화 -->
+    <meta name="darkreader-lock" />
+    <title>Bellite</title>
+    <!-- Google Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+    <!-- Local Font: Chandia (Display) -->
+    <style>
+      @font-face {
+        font-family: 'Chandia';
+        src: url('/src/assets/font/Chandia_PERSONAL_USE_ONLY.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Chandia Decorative';
+        src: url('/src/assets/font/ChandiaDecorative_PERSONAL_USE_ONLY.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      /* 브라우저 강제 다크모드 무시 */
+      :root {
+        color-scheme: light only;
+      }
+      html, body {
+        background-color: #F5DDD4 !important;
+        color: #0F0F0F !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
