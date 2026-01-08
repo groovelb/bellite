@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import AspectMedia from '../../../components/media/AspectMedia';
-import { testImages, testVideos } from '../../../utils/pexels-test-data';
+import { mediaAssets } from '../../../data/mediaAssets';
 
 export default {
   title: 'Custom Component/Media/AspectMedia',
@@ -44,7 +44,7 @@ export default {
     },
     aspectRatio: {
       control: 'select',
-      options: ['1/1', '4/3', '3/4', '16/9', '9/16', '21/9'],
+      options: ['1/1', '4/3', '3/4', '16/9', '9/16', '21/9', '3/2'],
       description: 'CSS aspect-ratio 값',
       table: {
         type: { summary: 'string' },
@@ -71,11 +71,22 @@ export default {
   },
 };
 
+// 샘플 이미지 배열 - mediaAssets 활용
+const sampleImages = [
+  { src: mediaAssets.hero.images.bg1, alt: 'Hero background 1', aspectRatio: '16/9' },
+  { src: mediaAssets.hero.images.bg2, alt: 'Hero background 2', aspectRatio: '16/9' },
+  ...mediaAssets.silhouette.slideArray.map(slide => ({
+    src: slide.image,
+    alt: `Silhouette ${slide.id}`,
+    aspectRatio: '3/2',
+  })),
+];
+
 /** 기본 이미지 */
 export const Default = {
   args: {
-    src: testImages.photography[0].src.medium,
-    alt: testImages.photography[0].alt,
+    src: mediaAssets.hero.image,
+    alt: 'Hero background',
     type: 'image',
     aspectRatio: '16/9',
     objectFit: 'cover',
@@ -91,11 +102,11 @@ export const Default = {
 export const AspectRatios = {
   render: () => (
     <Grid container spacing={3} sx={{ width: 800 }}>
-      {['1/1', '4/3', '16/9', '21/9'].map((ratio, idx) => (
+      {['1/1', '4/3', '16/9', '3/2'].map((ratio, idx) => (
         <Grid size={{ xs: 6, md: 3 }} key={ratio}>
           <Stack spacing={1}>
             <AspectMedia
-              src={testImages.photography[idx].src.medium}
+              src={sampleImages[idx % sampleImages.length].src}
               alt={`Ratio ${ratio}`}
               aspectRatio={ratio}
             />
@@ -118,7 +129,7 @@ export const ObjectFitOptions = {
           <Stack spacing={1}>
             <Box sx={{ backgroundColor: 'grey.200', p: 0.5 }}>
               <AspectMedia
-                src={testImages.abstract[0].src.medium}
+                src={mediaAssets.silhouette.slideArray[0].image}
                 alt={`Object-fit: ${fit}`}
                 aspectRatio="1/1"
                 objectFit={fit}
@@ -138,8 +149,7 @@ export const ObjectFitOptions = {
 export const Video = {
   args: {
     type: 'video',
-    src: testVideos.motion[0].src.sd,
-    poster: testVideos.motion[0].poster,
+    src: mediaAssets.hero.video,
     aspectRatio: '16/9',
     isAutoPlay: true,
     isMuted: true,
@@ -158,9 +168,8 @@ export const VideoWithControls = {
     <Box sx={{ width: 500 }}>
       <AspectMedia
         type="video"
-        src={testVideos.motion[1].src.sd}
-        poster={testVideos.motion[1].poster}
-        aspectRatio="16/9"
+        src={mediaAssets.silhouette.slideArray[0].video}
+        aspectRatio="3/2"
         hasControls
         isMuted={false}
       />
@@ -168,32 +177,24 @@ export const VideoWithControls = {
   ),
 };
 
-/** 카테고리별 이미지 갤러리 */
+/** Bellite 프로젝트 이미지 갤러리 */
 export const ImageGallery = {
   render: () => (
     <Stack spacing={4} sx={{ width: 800 }}>
-      <Typography variant="h6">Photography</Typography>
+      <Typography variant="h6">Bellite Project Assets</Typography>
       <Grid container spacing={2}>
-        {testImages.photography.map((img) => (
-          <Grid size={{ xs: 6, md: 3 }} key={img.id}>
-            <AspectMedia
-              src={img.src.small}
-              alt={img.alt}
-              aspectRatio={img.aspectRatio}
-            />
-          </Grid>
-        ))}
-      </Grid>
-
-      <Typography variant="h6">Abstract</Typography>
-      <Grid container spacing={2}>
-        {testImages.abstract.map((img) => (
-          <Grid size={{ xs: 6, md: 3 }} key={img.id}>
-            <AspectMedia
-              src={img.src.small}
-              alt={img.alt}
-              aspectRatio={img.aspectRatio}
-            />
+        {sampleImages.map((img, index) => (
+          <Grid size={{ xs: 6, md: 4 }} key={index}>
+            <Stack spacing={0.5}>
+              <AspectMedia
+                src={img.src}
+                alt={img.alt}
+                aspectRatio={img.aspectRatio}
+              />
+              <Typography variant="caption" color="text.secondary">
+                {img.alt}
+              </Typography>
+            </Stack>
           </Grid>
         ))}
       </Grid>

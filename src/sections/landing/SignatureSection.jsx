@@ -2,10 +2,7 @@ import { Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { SectionContainer } from '../../components/container/SectionContainer';
 import landingContent from '../../data/landingPageContent.json';
-
-// 이미지 import (Vite 정적 에셋)
-import aerialShot from '../../assets/s3/aerial-shot.jpeg';
-import moodboard1 from '../../assets/s3/moodbaord1.jpeg';
+import { mediaAssets } from '../../data/mediaAssets';
 
 /**
  * SignatureSection - Section 3+4 통합: 구겨지지 않는 보관 & 심미적 표현
@@ -40,8 +37,8 @@ const CONTENT = {
 
 // 이미지 설정
 const IMAGES = {
-  archive: aerialShot,
-  signature: moodboard1,
+  archive: mediaAssets.signature.images.aerialShot,
+  signature: mediaAssets.signature.images.moodboard1,
 };
 
 /**

@@ -3,9 +3,7 @@ import { Box, Typography } from '@mui/material';
 import StickyBackground from '../../components/layout/StickyBackground';
 import VideoScrubbing from '../../components/media/VideoScrubbing';
 import landingContent from '../../data/landingPageContent.json';
-
-// 비디오 import (Vite 정적 에셋)
-import moodboardVideo from '../../assets/s3/moodbaord.mp4';
+import { mediaAssets } from '../../data/mediaAssets';
 
 /**
  * InsideMoodSection - 내부 오브제 무드보드 (분위기 전환 섹션)
@@ -38,7 +36,7 @@ const CONTENT = {
 
 // 설정값
 const CONFIG = {
-  backgroundVideo: moodboardVideo,
+  backgroundVideo: mediaAssets.insideMood.video,
   overlayOpacity: 0.4,
 };
 

@@ -10,10 +10,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { DocumentTitle, PageContainer, SectionTitle } from '../../../components/storybookDocumentation';
 import VideoScrubbing from '../../../components/media/VideoScrubbing';
+import { mediaAssets } from '../../../data/mediaAssets';
 
-import testVideo from '../../../assets/bg/hero_bg_optimized.mp4';
-
-const TEST_VIDEO_URL = testVideo;
+const TEST_VIDEO_URL = mediaAssets.hero.video;
 
 export default {
   title: 'Custom Component/Media/VideoScrubbing',

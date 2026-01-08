@@ -6,11 +6,8 @@ import StickyBackground from '../../components/layout/StickyBackground';
 import VideoScrubbing from '../../components/media/VideoScrubbing';
 import { Parallax } from '../../components/string-tune/scroll/Parallax';
 import landingContent from '../../data/landingPageContent.json';
+import { mediaAssets } from '../../data/mediaAssets';
 import { displayFontFamily } from '../../styles/themes/theme';
-
-// 이미지 import (Vite 정적 에셋)
-import heroBgImage from '../../assets/bg/hero_bg_2.jpeg';
-import heroBgVideo from '../../assets/bg/hero_bg_optimized.mp4';
 
 /**
  * HeroSection - Section 1: 브랜드 아이덴티티 & 미션
@@ -42,8 +39,8 @@ const CONTENT = {
 
 // 설정값
 const CONFIG = {
-  backgroundImage: heroBgImage,
-  backgroundVideo: heroBgVideo,
+  backgroundImage: mediaAssets.hero.image,
+  backgroundVideo: mediaAssets.hero.video,
   overlayOpacity: 0.5,
   showScrollIndicator: true,
 };

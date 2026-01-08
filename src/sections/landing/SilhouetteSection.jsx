@@ -5,12 +5,7 @@ import VideoSlide from '../../components/media/VideoSlide';
 import SectionTitle from '../../components/typography/SectionTitle';
 import { BRAND_COLORS } from '../../styles/themes/theme';
 import landingContent from '../../data/landingPageContent.json';
-
-// 비디오 import (Vite 정적 에셋)
-import s2Video1 from '../../assets/s2/s1.mp4';
-import s2Video2 from '../../assets/s2/s2.mp4';
-import s2Video3 from '../../assets/s2/s3.mp4';
-import s2Video4 from '../../assets/s2/s4.mp4';
+import { videoFileMap } from '../../data/mediaAssets';
 
 /**
  * SilhouetteSection - Section 2: 무너지지 않는 실루엣
@@ -29,18 +24,10 @@ import s2Video4 from '../../assets/s2/s4.mp4';
 // JSON에서 섹션 데이터 추출
 const sectionData = landingContent.sections.find(s => s.id === 'silhouette');
 
-// 비디오 파일명 → import 매핑
-const VIDEO_MAP = {
-  's1.mp4': s2Video1,
-  's2.mp4': s2Video2,
-  's3.mp4': s2Video3,
-  's4.mp4': s2Video4,
-};
-
 // 슬라이드 데이터 (JSON + 비디오 매핑)
 const SLIDES = sectionData.slides.map(slide => ({
   ...slide,
-  videoSrc: VIDEO_MAP[slide.video],
+  videoSrc: videoFileMap[slide.video],
 }));
 
 /**
