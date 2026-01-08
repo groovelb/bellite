@@ -17,6 +17,7 @@
 - RatioContainer: 비율 기반 컨테이너 (`components/layout/RatioContainer.jsx`)
 - FullPageContainer: 전체 페이지 컨테이너 (`components/layout/FullPageContainer.jsx`)
 - StickyBackground: 고정 배경 + 콘텐츠 스크롤 레이아웃. 배경 고정 상태로 콘텐츠 스크롤 후 전체 섹션 스크롤. framer-motion useScroll/useTransform (`components/layout/StickyBackground.jsx`)
+- BrokenGridGallery: 브로큰 그리드 갤러리. 비정형 산개 레이아웃 + MouseParallax 내장. items, height, imageScale, spread, zIndex 기반 깊이감 (`components/layout/BrokenGridGallery.jsx`)
 
 ### Container
 
@@ -96,7 +97,7 @@ Bellite 랜딩 페이지 전용 컴포넌트. 스크롤 애니메이션 및 인�
 - SilhouetteSection: 무너지지 않는 실루엣. 가로 스크롤 비디오 슬라이드 + MarqueeText 타이틀 (`sections/landing/SilhouetteSection.jsx`)
 - InsideMoodSection: 내부 오브제 무드보드. StickyBackground + VideoScrubbing. 브릿지 역할 (`sections/landing/InsideMoodSection.jsx`)
 - SignatureSection: 구겨지지 않는 보관 & 심미적 표현. SectionContainer(풀블리드) + 2x2 그리드 레이아웃 (`sections/landing/SignatureSection.jsx`)
-- DailyMoodSection: 브랜드 철학 시리즈. CenteredAsideLayout + framer-motion. 3개 시리즈 (Morning Ritual, Practical Romanticism, Life in Balance) (`sections/landing/DailyMoodSection.jsx`)
+- DailyMoodSection: Coming Soon 섹션. BrokenGridGallery + MouseParallax. 9개 이미지 비정형 배치 (`sections/landing/DailyMoodSection.jsx`)
 - OriginSection: 브랜드 기원. 스크롤 기반 키네틱 타이포그래피 + 단어별 opacity 애니메이션 (`sections/landing/OriginSection.jsx`)
 
 ### Card
