@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Box } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import VideoSlide from '../../components/media/VideoSlide';
 import SectionTitle from '../../components/typography/SectionTitle';
@@ -123,19 +123,28 @@ function VideoSlideContainer({ slide, width = '60vw', slideIndex, totalSlides })
   );
 }
 
-// 슬라이드 설정
-const SLIDE_WIDTH = '60vw';
-const SLIDE_GAP = '2vw';
-const SLIDE_PADDING = '3vw';
+// 슬라이드 설정 (반응형)
+const SLIDE_CONFIG = {
+  mobile: { width: 85, gap: 3, padding: 4 },   // vw 단위
+  desktop: { width: 60, gap: 2, padding: 3 },  // vw 단위
+};
 
 function SilhouetteSection() {
   const containerRef = useRef(null);
   const totalSlides = SLIDES.length;
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  // 반응형 슬라이드 설정
+  const config = isMobile ? SLIDE_CONFIG.mobile : SLIDE_CONFIG.desktop;
+  const slideWidth = `${config.width}vw`;
+  const slideGap = `${config.gap}vw`;
+  const slidePadding = `${config.padding}vw`;
 
   // 슬라이드 너비/간격/패딩 값 추출
-  const slideWidthValue = parseFloat(SLIDE_WIDTH);
-  const gapValue = parseFloat(SLIDE_GAP);
-  const paddingValue = parseFloat(SLIDE_PADDING);
+  const slideWidthValue = config.width;
+  const gapValue = config.gap;
+  const paddingValue = config.padding;
 
   // 콘텐츠 너비 계산
   const totalGapWidth = gapValue * Math.max(0, totalSlides - 1);
@@ -198,10 +207,10 @@ function SilhouetteSection() {
             style={{
               x,
               display: 'flex',
-              gap: SLIDE_GAP,
+              gap: slideGap,
               alignItems: 'center',
-              paddingLeft: SLIDE_PADDING,
-              paddingRight: SLIDE_PADDING,
+              paddingLeft: slidePadding,
+              paddingRight: slidePadding,
             }}
           >
             {SLIDES.map((slide, index) => (
@@ -216,7 +225,7 @@ function SilhouetteSection() {
               >
                 <VideoSlideContainer
                   slide={slide}
-                  width={SLIDE_WIDTH}
+                  width={slideWidth}
                   slideIndex={index}
                   totalSlides={totalSlides}
                 />

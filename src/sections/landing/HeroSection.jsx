@@ -193,7 +193,7 @@ function ScrollIndicator() {
     <Box
       sx={{
         position: 'absolute',
-        bottom: { xs: 32, md: 48 },
+        bottom: { xs: 24, sm: 32, md: 40, lg: 48 },
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 3,
@@ -279,10 +279,10 @@ function HeroSection({ backgroundMode = 'image', scrollMultiplier = 2 }) {
         {/* SplitScreen 콘텐츠 */}
         <Box
           sx={{
-            // GNB와 동일한 px
-            px: { xs: 3, sm: 4, md: 6 },
-            // 하단 여백
-            pb: { xs: 12, md: 16 },
+            // GNB와 동일한 px (4단계)
+            px: { xs: 3, sm: 4, md: 6, lg: 8 },
+            // 하단 여백 (4단계)
+            pb: { xs: 10, sm: 12, md: 14, lg: 16 },
           }}
         >
           <SplitScreen
@@ -295,13 +295,13 @@ function HeroSection({ backgroundMode = 'image', scrollMultiplier = 2 }) {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              py: { xs: 4, md: 6 },
+              py: { xs: 3, sm: 4, md: 5, lg: 6 },
             }}
             rightSx={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              py: { xs: 4, md: 6 },
+              py: { xs: 3, sm: 4, md: 5, lg: 6 },
             }}
           />
         </Box>

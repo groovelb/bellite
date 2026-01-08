@@ -100,7 +100,8 @@ function PillarCard({ pillar, index }) {
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        px: { xs: 2, md: 3 },
+        px: { xs: 2, sm: 2.5, md: 3 },
+        py: { xs: 3, sm: 4, md: 0 },
         position: 'relative',
         cursor: 'default',
       }}
@@ -151,7 +152,7 @@ function PillarCard({ pillar, index }) {
         component="h3"
         sx={{
           fontFamily: 'Adamina, Georgia, serif',
-          fontSize: { xs: '1.125rem', md: '1.25rem' },
+          fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' },
           fontWeight: 700,
           color: 'brand.urban',
           letterSpacing: '0.02em',
@@ -166,7 +167,7 @@ function PillarCard({ pillar, index }) {
         component="h4"
         sx={{
           fontFamily: 'Pretendard Variable, sans-serif',
-          fontSize: { xs: '0.9rem', md: '1rem' },
+          fontSize: { xs: '0.85rem', sm: '0.9rem', md: '1rem' },
           fontWeight: 600,
           color: 'brand.ribbon',
           letterSpacing: '0.04em',
@@ -191,12 +192,12 @@ function PillarCard({ pillar, index }) {
       <Typography
         sx={{
           fontFamily: 'Pretendard Variable, sans-serif',
-          fontSize: { xs: '0.875rem', md: '0.9375rem' },
+          fontSize: { xs: '0.8125rem', sm: '0.875rem', md: '0.9375rem' },
           fontWeight: 400,
           color: 'brand.urban',
           opacity: 0.65,
           lineHeight: 1.7,
-          maxWidth: 260,
+          maxWidth: { xs: 280, md: 260 },
           wordBreak: 'keep-all',
         }}
       >
@@ -217,7 +218,7 @@ function ValuePillarsSection() {
       variants={sectionVariants}
       sx={{
         position: 'relative',
-        py: { xs: 6, md: 8 },
+        py: { xs: 5, sm: 6, md: 7, lg: 8 },
         overflow: 'hidden',
         borderBottom: '1px solid',
         borderColor: 'brand.urban',
@@ -239,7 +240,7 @@ function ValuePillarsSection() {
             {CONTENT.pillars.map((pillar, index) => (
               <Grid
                 key={pillar.id}
-                size={{ xs: 12, md: 4 }}
+                size={{ xs: 12, sm: 12, md: 4 }}
               >
                 <PillarCard pillar={pillar} index={index} />
               </Grid>
