@@ -5,6 +5,7 @@ import ValuePillarsSection from '../sections/landing/ValuePillarsSection';
 import SilhouetteSection from '../sections/landing/SilhouetteSection';
 import InsideMoodSection from '../sections/landing/InsideMoodSection';
 import SignatureSection from '../sections/landing/SignatureSection';
+import DailyMoodSection from '../sections/landing/DailyMoodSection';
 import OriginSection from '../sections/landing/OriginSection';
 
 /**
@@ -66,6 +67,11 @@ function LandingPage() {
       {/* Section 6: Origin - 브랜드 기원 */}
       <Box id="origin">
         <OriginSection />
+      </Box>
+
+      {/* Section 7: DailyMood - 브랜드 철학 (브로큰 그리드) */}
+      <Box id="dailyMood">
+        <DailyMoodSection />
       </Box>
     </Box>
   );
