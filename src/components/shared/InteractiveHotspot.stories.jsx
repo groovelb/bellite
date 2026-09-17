@@ -6,7 +6,7 @@ const sampleBgLight = 'linear-gradient(135deg, #F5DDD4 0%, #FAF0ED 100%)';
 const sampleBgDark = 'linear-gradient(135deg, #0F0F0F 0%, #2A2A2A 100%)';
 
 export default {
-  title: 'Custom Component/Shared/InteractiveHotspot',
+  title: 'Custom Component/3. Motion & Reveal/InteractiveHotspot',
   component: InteractiveHotspot,
   tags: ['autodocs'],
   parameters: {

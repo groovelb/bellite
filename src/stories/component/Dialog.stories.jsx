@@ -88,7 +88,7 @@ export const Default = {
     fullScreen: false,
     scroll: 'paper',
   },
-  render: (args) => {
+  render: function Render(args) {
     const [open, setOpen] = useState(false);
 
     return (
@@ -125,7 +125,7 @@ export const Default = {
 
 /** 확인 대화상자 */
 export const Confirmation = {
-  render: () => {
+  render: function Render2() {
     const [open, setOpen] = useState(false);
 
     return (
@@ -154,7 +154,7 @@ export const Confirmation = {
 
 /** 폼 대화상자 */
 export const FormDialog = {
-  render: () => {
+  render: function Render3() {
     const [open, setOpen] = useState(false);
 
     return (
@@ -203,7 +203,7 @@ export const FormDialog = {
 
 /** 알림 대화상자 */
 export const Alert = {
-  render: () => {
+  render: function Render4() {
     const [open, setOpen] = useState(false);
 
     return (
@@ -240,7 +240,7 @@ export const Alert = {
 
 /** 크기 변형 */
 export const Sizes = {
-  render: () => {
+  render: function Render5() {
     const [openSize, setOpenSize] = useState(null);
 
     const sizes = ['xs', 'sm', 'md', 'lg'];
@@ -281,7 +281,7 @@ export const Sizes = {
 
 /** 스크롤 대화상자 */
 export const Scrollable = {
-  render: () => {
+  render: function Render6() {
     const [open, setOpen] = useState(false);
 
     return (
@@ -323,7 +323,7 @@ export const Scrollable = {
 
 /** 리스트 대화상자 */
 export const ListDialog = {
-  render: () => {
+  render: function Render7() {
     const [open, setOpen] = useState(false);
 
     const users = [
@@ -368,7 +368,7 @@ export const ListDialog = {
 
 /** 커스텀 헤더 */
 export const CustomHeader = {
-  render: () => {
+  render: function Render8() {
     const [open, setOpen] = useState(false);
 
     return (
@@ -432,7 +432,7 @@ export const CustomHeader = {
 
 /** 중첩 대화상자 */
 export const Nested = {
-  render: () => {
+  render: function Render9() {
     const [open1, setOpen1] = useState(false);
     const [open2, setOpen2] = useState(false);
 
@@ -480,7 +480,7 @@ export const Nested = {
 
 /** 실제 사용 예시 - 로그인 */
 export const LoginDialog = {
-  render: () => {
+  render: function Render10() {
     const [open, setOpen] = useState(false);
 
     return (

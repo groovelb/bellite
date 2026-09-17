@@ -90,7 +90,7 @@ export const Default = {
     disabled: false,
     error: false,
   },
-  render: (args) => {
+  render: function Render(args) {
     const [value, setValue] = useState('');
 
     return (
@@ -122,7 +122,7 @@ export const Default = {
 
 /** Variant 비교 */
 export const AllVariants = {
-  render: () => {
+  render: function Render2() {
     const [values, setValues] = useState({ outlined: '', filled: '', standard: '' });
 
     const handleChange = (variant) => (event) => {
@@ -164,7 +164,7 @@ export const AllVariants = {
 
 /** 크기 비교 */
 export const Sizes = {
-  render: () => {
+  render: function Render3() {
     const [small, setSmall] = useState('');
     const [medium, setMedium] = useState('');
 
@@ -192,7 +192,7 @@ export const Sizes = {
 
 /** 도움말 텍스트 & 에러 */
 export const WithHelperText = {
-  render: () => {
+  render: function Render4() {
     const [value, setValue] = useState('');
     const [errorValue, setErrorValue] = useState('');
 
@@ -227,7 +227,7 @@ export const WithHelperText = {
 
 /** 다중 선택 */
 export const Multiple = {
-  render: () => {
+  render: function Render5() {
     const [values, setValues] = useState([]);
 
     const options = ['React', 'Vue', 'Angular', 'Svelte', 'Next.js'];
@@ -262,7 +262,7 @@ export const Multiple = {
 
 /** 그룹화된 옵션 */
 export const Grouped = {
-  render: () => {
+  render: function Render6() {
     const [value, setValue] = useState('');
 
     return (
@@ -291,7 +291,7 @@ export const Grouped = {
 
 /** 비활성화 옵션 */
 export const DisabledOptions = {
-  render: () => {
+  render: function Render7() {
     const [value, setValue] = useState('');
 
     return (
@@ -325,7 +325,7 @@ export const Disabled = {
 
 /** 네이티브 셀렉트 */
 export const Native = {
-  render: () => {
+  render: function Render8() {
     const [value, setValue] = useState('');
 
     return (
@@ -354,7 +354,7 @@ export const Native = {
 
 /** 실제 사용 예시 - 필터 */
 export const FilterExample = {
-  render: () => {
+  render: function Render9() {
     const [category, setCategory] = useState('all');
     const [status, setStatus] = useState('all');
     const [sort, setSort] = useState('newest');

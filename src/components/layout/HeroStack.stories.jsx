@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import { HeroStack } from './HeroStack';
 
 export default {
-  title: 'Custom Component/Layout/HeroStack',
+  title: 'Custom Component/1. Hero/HeroStack',
   component: HeroStack,
   tags: ['autodocs'],
   parameters: {

@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import { GNB } from '../../../components/navigation/GNB';
 
 export default {
-  title: 'Custom Component/Navigation/GNB',
+  title: 'Custom Component/5. Layout & Shell/GNB',
   component: GNB,
   tags: ['autodocs'],
   parameters: {

@@ -101,7 +101,7 @@ export const Default = {
 
 /** 라벨이 있는 스위치 */
 export const WithLabel = {
-  render: () => {
+  render: function Render() {
     const [checked, setChecked] = useState(true);
 
     return (
@@ -235,7 +235,7 @@ export const LabelPlacement = {
 
 /** 상태 텍스트 표시 */
 export const WithStatusText = {
-  render: () => {
+  render: function Render2() {
     const [checked, setChecked] = useState(false);
 
     return (
@@ -257,7 +257,7 @@ export const WithStatusText = {
 
 /** 실제 사용 예시 - 설정 패널 */
 export const SettingsPanel = {
-  render: () => {
+  render: function Render3() {
     const [settings, setSettings] = useState({
       darkMode: false,
       notifications: true,
@@ -344,7 +344,7 @@ export const SettingsPanel = {
 
 /** 실제 사용 예시 - 공개/비공개 토글 */
 export const VisibilityToggle = {
-  render: () => {
+  render: function Render4() {
     const [isPublic, setIsPublic] = useState(false);
 
     return (

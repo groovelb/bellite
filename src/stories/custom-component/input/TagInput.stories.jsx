@@ -30,7 +30,7 @@ export default {
  * TagInput 기본 사용 예시
  */
 export const Default = {
-  render: () => {
+  render: function Render() {
     const [tags, setTags] = useState(['minimal', 'dark']);
 
     return (
@@ -51,7 +51,7 @@ export const Default = {
  * TagInput with Suggestions
  */
 export const WithSuggestions = {
-  render: () => {
+  render: function Render2() {
     const [tags, setTags] = useState([]);
     const suggestions = ['minimal', 'bold', 'colorful', 'dark', 'light', 'retro', 'modern', 'organic', 'geometric', 'playful'];
 

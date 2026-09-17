@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import StickyBackground from './StickyBackground';
 
 export default {
-  title: 'Custom Component/Layout/StickyBackground',
+  title: 'Custom Component/1. Hero/StickyBackground',
   component: StickyBackground,
   tags: ['autodocs'],
   parameters: {

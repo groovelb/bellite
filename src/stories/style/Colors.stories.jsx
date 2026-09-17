@@ -85,7 +85,7 @@ const SemanticColorRow = ({ name, light, main, dark, description }) => (
 
 /** Docs - Lumenstate 색상 시스템 문서 */
 export const Docs = {
-  render: () => {
+  render: function Render() {
     const theme = useTheme();
 
     // 토큰 구조 (트리 뷰용)
@@ -308,7 +308,7 @@ text.secondary (80% opacity)로 구분해줘. 글로우/블러 금지."` }
 /** 시멘틱 토큰 - 역할별 색상 */
 export const SemanticTokens = {
   name: 'Semantic Tokens',
-  render: () => {
+  render: function Render2() {
     const theme = useTheme();
     return (
       <>

@@ -5,7 +5,7 @@ import LineGrid from '../../../components/layout/LineGrid';
 import { GridContent } from '../../../components/storybookDocumentation';
 
 export default {
-  title: 'Custom Component/Layout/LineGrid',
+  title: 'Custom Component/2. Landing Sections/LineGrid',
   component: LineGrid,
   tags: ['autodocs'],
   parameters: {

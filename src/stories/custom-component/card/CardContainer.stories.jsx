@@ -7,7 +7,7 @@ import { CardContainer } from '../../../components/card/CardContainer';
 import { SPACING, toPx } from '../../../styles/tokens';
 
 export default {
-  title: 'Custom Component/Card/CardContainer',
+  title: 'Custom Component/6. Adapted Starter/CardContainer',
   component: CardContainer,
   tags: ['autodocs'],
   parameters: {

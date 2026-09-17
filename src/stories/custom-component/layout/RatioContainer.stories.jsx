@@ -12,7 +12,7 @@ import { DocumentTitle, PageContainer, SectionTitle, GridContent } from '../../.
 import { RatioContainer, PHI } from '../../../components/layout/RatioContainer';
 
 export default {
-  title: 'Custom Component/Layout/RatioContainer',
+  title: 'Custom Component/5. Layout & Shell/RatioContainer',
   component: RatioContainer,
   tags: ['autodocs'],
   parameters: {

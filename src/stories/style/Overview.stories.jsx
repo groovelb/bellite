@@ -17,7 +17,7 @@ export default {
 
 /** 기본 - Theme 트리 탐색기 */
 export const Default = {
-  render: () => {
+  render: function Render() {
     const theme = useTheme();
 
     // theme 객체에서 순환 참조와 함수를 제외한 주요 키만 추출
@@ -136,7 +136,7 @@ export const Default = {
 /** 테이블 뷰 - 주요 토큰 요약 */
 export const TableView = {
   name: 'Table View',
-  render: () => {
+  render: function Render2() {
     const theme = useTheme();
 
     const tables = [
@@ -256,7 +256,7 @@ export const TableView = {
                   </Box>
                 </Box>
                 <Box component="tbody">
-                  { table.data.map((row, index) => {
+                  { table.data.map((row) => {
                     const isColor = typeof row.value === 'string' && (
                       row.value.startsWith('#') ||
                       row.value.startsWith('rgb')

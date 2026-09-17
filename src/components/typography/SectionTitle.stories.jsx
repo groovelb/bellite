@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import SectionTitle from './SectionTitle';
 
 export default {
-  title: 'Custom Component/Typography/SectionTitle',
+  title: 'Custom Component/2. Landing Sections/SectionTitle',
   component: SectionTitle,
   tags: ['autodocs'],
   parameters: {

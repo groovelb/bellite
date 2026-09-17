@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import BlurRevealTypography from './BlurRevealTypography';
 
 export default {
-  title: 'Custom Component/Typography/BlurRevealTypography',
+  title: 'Custom Component/3. Motion & Reveal/BlurRevealTypography',
   component: BlurRevealTypography,
   tags: ['autodocs'],
   parameters: {

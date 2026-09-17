@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { SectionContainer } from './SectionContainer';
 
 export default {
-  title: 'Custom Component/Container/SectionContainer',
+  title: 'Custom Component/2. Landing Sections/SectionContainer',
   component: SectionContainer,
   tags: ['autodocs'],
   parameters: {

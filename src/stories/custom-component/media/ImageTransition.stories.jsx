@@ -14,7 +14,7 @@ import { DocumentTitle, PageContainer, SectionTitle } from '../../../components/
 import { ImageTransition } from '../../../components/media/ImageTransition';
 
 export default {
-  title: 'Custom Component/Media/ImageTransition',
+  title: 'Custom Component/4. Media/ImageTransition',
   component: ImageTransition,
   tags: ['autodocs'],
   parameters: {

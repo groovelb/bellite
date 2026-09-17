@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { ContentArea } from './ContentArea';
 
 export default {
-  title: 'Custom Component/Container/ContentArea',
+  title: 'Custom Component/2. Landing Sections/ContentArea',
   component: ContentArea,
   tags: ['autodocs'],
   parameters: {

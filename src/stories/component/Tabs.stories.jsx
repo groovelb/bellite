@@ -103,7 +103,7 @@ export const Default = {
     textColor: 'primary',
     indicatorColor: 'primary',
   },
-  render: (args) => {
+  render: function Render(args) {
     const [value, setValue] = useState(0);
 
     const handleChange = (event, newValue) => {
@@ -143,7 +143,7 @@ export const Default = {
 
 /** 중앙 정렬 탭 */
 export const Centered = {
-  render: () => {
+  render: function Render2() {
     const [value, setValue] = useState(0);
 
     return (
@@ -164,7 +164,7 @@ export const Centered = {
 
 /** 전체 너비 탭 */
 export const FullWidth = {
-  render: () => {
+  render: function Render3() {
     const [value, setValue] = useState(0);
 
     return (
@@ -185,7 +185,7 @@ export const FullWidth = {
 
 /** 스크롤 가능한 탭 */
 export const Scrollable = {
-  render: () => {
+  render: function Render4() {
     const [value, setValue] = useState(0);
 
     return (
@@ -211,7 +211,7 @@ export const Scrollable = {
 
 /** 세로 방향 탭 */
 export const Vertical = {
-  render: () => {
+  render: function Render5() {
     const [value, setValue] = useState(0);
 
     return (
@@ -247,7 +247,7 @@ export const Vertical = {
 
 /** 색상 변형 */
 export const Colors = {
-  render: () => {
+  render: function Render6() {
     const [value1, setValue1] = useState(0);
     const [value2, setValue2] = useState(0);
 
@@ -286,7 +286,7 @@ export const Colors = {
 
 /** 비활성화 탭 */
 export const Disabled = {
-  render: () => {
+  render: function Render7() {
     const [value, setValue] = useState(0);
 
     return (

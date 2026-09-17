@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import ArrowLink from './ArrowLink';
 
 export default {
-  title: 'Custom Component/Shared/ArrowLink',
+  title: 'Custom Component/6. Adapted Starter/ArrowLink',
   component: ArrowLink,
   tags: ['autodocs'],
   parameters: {

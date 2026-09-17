@@ -11,7 +11,7 @@ const sampleOptions = [
 ];
 
 export default {
-  title: 'Custom Component/Shared/UnderlineSelect',
+  title: 'Custom Component/6. Adapted Starter/UnderlineSelect',
   component: UnderlineSelect,
   tags: ['autodocs'],
   parameters: {

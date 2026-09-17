@@ -10,7 +10,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { CustomCard } from '../../../components/card/CustomCard';
 
 export default {
-  title: 'Custom Component/Card/CustomCard',
+  title: 'Custom Component/6. Adapted Starter/CustomCard',
   component: CustomCard,
   tags: ['autodocs'],
   parameters: {

@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 import { AppShell } from '../../../components/navigation/AppShell';
 
 export default {
-  title: 'Custom Component/Navigation/AppShell',
+  title: 'Custom Component/5. Layout & Shell/AppShell',
   component: AppShell,
   tags: ['autodocs'],
   parameters: {
@@ -110,7 +110,7 @@ export const Default = {
 
 /** 메뉴 상태 관리 예시 */
 export const WithActiveState = {
-  render: () => {
+  render: function Render() {
     const [activeIndex, setActiveIndex] = useState(0);
     const menuItems = ['Home', 'About', 'Contact'];
 

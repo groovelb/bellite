@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import MarqueeText from '../../../components/typography/MarqueeText';
 
 export default {
-  title: 'Custom Component/Typography/MarqueeText',
+  title: 'Custom Component/2. Landing Sections/MarqueeText',
   component: MarqueeText,
   tags: ['autodocs'],
   parameters: {

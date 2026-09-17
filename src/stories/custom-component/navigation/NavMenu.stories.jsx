@@ -20,14 +20,6 @@ const museNavItems = [
   { id: 'settings', label: 'Settings', icon: <SettingsIcon /> },
 ];
 
-// Basic Navigation Items
-const basicNavItems = [
-  { id: 'home', label: 'Home', icon: <HomeIcon /> },
-  { id: 'about', label: 'About', icon: <InfoIcon /> },
-  { id: 'work', label: 'Work', icon: <WorkIcon /> },
-  { id: 'contact', label: 'Contact', icon: <MailIcon /> },
-];
-
 /**
  * Story Component: Interactive Demo
  */

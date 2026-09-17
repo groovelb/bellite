@@ -30,7 +30,7 @@ export default {
  * SearchBar 기본 사용 예시
  */
 export const Default = {
-  render: () => {
+  render: function Render() {
     const [value, setValue] = useState('');
     return (
       <Box sx={{ maxWidth: 400 }}>
@@ -49,7 +49,7 @@ export const Default = {
  * SearchBar 변형 비교
  */
 export const Variants = {
-  render: () => {
+  render: function Render2() {
     const [values, setValues] = useState({ outlined: '', filled: '', minimal: '' });
 
     const handleChange = (variant, value) => {
@@ -100,7 +100,7 @@ export const Variants = {
  * SearchBar with Filter
  */
 export const WithFilter = {
-  render: () => {
+  render: function Render3() {
     const [value, setValue] = useState('');
     const [filterActive, setFilterActive] = useState(false);
 

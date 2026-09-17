@@ -30,7 +30,7 @@ export default {
  * FileDropzone 기본 사용 예시
  */
 export const Default = {
-  render: () => {
+  render: function Render() {
     const [file, setFile] = useState(null);
     const [preview, setPreview] = useState(null);
 

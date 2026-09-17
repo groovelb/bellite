@@ -185,7 +185,7 @@ const CategoryAssets = ({ category, onCopy }) => {
  * Media Assets 문서
  */
 export const Docs = {
-  render: () => {
+  render: function Render() {
     const [activeTab, setActiveTab] = useState(0);
     const [snackbar, setSnackbar] = useState({ open: false, message: '' });
 

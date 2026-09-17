@@ -103,7 +103,7 @@ export const Default = {
 
 /** 라벨이 있는 체크박스 */
 export const WithLabel = {
-  render: () => {
+  render: function Render() {
     const [checked, setChecked] = useState(false);
 
     return (
@@ -190,7 +190,7 @@ export const Disabled = {
 
 /** 체크박스 그룹 */
 export const Group = {
-  render: () => {
+  render: function Render2() {
     const [selected, setSelected] = useState(['react']);
 
     const handleChange = (event) => {
@@ -282,7 +282,7 @@ export const GroupRow = {
 
 /** Indeterminate (부분 선택) */
 export const Indeterminate = {
-  render: () => {
+  render: function Render3() {
     const [checked, setChecked] = useState([true, false, false]);
 
     const handleParent = (event) => {
@@ -379,7 +379,7 @@ export const WithError = {
 
 /** 실제 사용 예시 - 알림 설정 */
 export const NotificationSettings = {
-  render: () => {
+  render: function Render4() {
     const [settings, setSettings] = useState({
       email: true,
       push: true,

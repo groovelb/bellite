@@ -15,7 +15,7 @@ import { mediaAssets } from '../../../data/mediaAssets';
 const TEST_VIDEO_URL = mediaAssets.hero.video;
 
 export default {
-  title: 'Custom Component/Media/VideoScrubbing',
+  title: 'Custom Component/4. Media/VideoScrubbing',
   component: VideoScrubbing,
   tags: ['autodocs'],
   parameters: {

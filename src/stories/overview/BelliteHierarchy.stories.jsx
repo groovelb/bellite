@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -12,6 +13,7 @@ import {
   SectionTitle,
 } from '../../components/storybookDocumentation';
 import projectStructure from '../../data/projectStructure.js';
+import { ASSEMBLY_STEPS } from './assemblySteps.js';
 
 export default {
   title: 'Custom Component/0. Hierarchy',
@@ -107,6 +109,30 @@ const resolveStoryId = (node) => {
   const title = titleByName[node.name];
   return title ? sanitize(title) : null;
 };
+
+/**
+ * 스토리 링크. Storybook 프레임 밖으로 이동시키려고 target을 _top으로 둔다
+ *
+ * Props:
+ * @param {array} stories - label과 id를 담은 배열 [Required]
+ *
+ * Example usage:
+ * <StoryLinks stories={ step.stories } />
+ */
+function StoryLinks({ stories }) {
+  return (
+    <>
+      { stories.map((story, index) => (
+        <span key={ story.id }>
+          { index > 0 ? ' · ' : '' }
+          <a href={ `?path=/${ story.docs ? 'docs' : 'story' }/${ story.id }` } target="_top">
+            { story.label }
+          </a>
+        </span>
+      )) }
+    </>
+  );
+}
 
 /**
  * 계층 한 줄과 그 아래 가지
@@ -255,6 +281,29 @@ export const Default = {
             </TableBody>
           </Table>
         </TableContainer>
+
+        <SectionTitle
+          title="조립 순서"
+          description="08 Domain Knowledge & Research와 같은 목록이다. 한 파일(assemblySteps.js)을 함께 읽는다"
+        />
+        <Stack spacing={ 2 } sx={ { mb: 4 } }>
+          { ASSEMBLY_STEPS.map((step) => (
+            <Box
+              key={ step.step }
+              sx={ { p: 2, border: '1px solid', borderColor: 'divider', backgroundColor: 'background.paper' } }
+            >
+              <Typography variant="subtitle1" sx={ { fontWeight: 600 } }>
+                { step.step }. { step.title }
+              </Typography>
+              <Typography variant="body2" color="text.secondary" sx={ { mb: 0.5 } }>
+                { step.what }
+              </Typography>
+              <Typography variant="caption" sx={ { fontSize: 12 } }>
+                <StoryLinks stories={ step.stories } />
+              </Typography>
+            </Box>
+          )) }
+        </Stack>
 
         <SectionTitle
           title="조립 계층"

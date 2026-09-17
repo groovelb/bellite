@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import QuantitySelector from './QuantitySelector';
 
 export default {
-  title: 'Custom Component/Shared/QuantitySelector',
+  title: 'Custom Component/6. Adapted Starter/QuantitySelector',
   component: QuantitySelector,
   tags: ['autodocs'],
   parameters: {

@@ -202,7 +202,7 @@ export const Striped = {
 
 /** 선택 가능한 테이블 */
 export const Selectable = {
-  render: () => {
+  render: function Render() {
     const [selected, setSelected] = useState([]);
 
     const handleSelectAll = (event) => {
@@ -285,7 +285,7 @@ export const Selectable = {
 
 /** 정렬 가능한 테이블 */
 export const Sortable = {
-  render: () => {
+  render: function Render2() {
     const [order, setOrder] = useState('asc');
     const [orderBy, setOrderBy] = useState('calories');
 
@@ -353,7 +353,7 @@ export const Sortable = {
 
 /** 페이지네이션 테이블 */
 export const WithPagination = {
-  render: () => {
+  render: function Render3() {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(2);
 
@@ -413,7 +413,7 @@ export const WithPagination = {
 
 /** 실제 사용 예시 - 사용자 목록 */
 export const UserList = {
-  render: () => {
+  render: function Render4() {
     const getStatusColor = (status) => {
       switch (status) {
         case '활성': return 'success';

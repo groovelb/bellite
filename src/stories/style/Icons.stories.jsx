@@ -77,7 +77,10 @@ pnpm add lucide-react
 };
 
 /** 아이콘 그리드 아이템 */
-const IconItem = ({ icon: IconComponent, name, size = 24 }) => (
+const IconItem = ({ icon, name, size = 24 }) => {
+  const IconComponent = icon;
+
+  return (
   <Box
     sx={ {
       display: 'flex',
@@ -95,7 +98,8 @@ const IconItem = ({ icon: IconComponent, name, size = 24 }) => (
       { name }
     </Typography>
   </Box>
-);
+  );
+};
 
 /** Docs - lucide-react 아이콘 시스템 */
 export const Docs = {

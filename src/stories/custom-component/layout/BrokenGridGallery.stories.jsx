@@ -4,7 +4,7 @@ import BrokenGridGallery from '../../../components/layout/BrokenGridGallery';
 import { mediaAssets } from '../../../data/mediaAssets';
 
 export default {
-  title: 'Custom Component/Layout/BrokenGridGallery',
+  title: 'Custom Component/2. Landing Sections/BrokenGridGallery',
   component: BrokenGridGallery,
   tags: ['autodocs'],
   parameters: {

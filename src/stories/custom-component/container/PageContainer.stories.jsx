@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import { PageContainer } from '../../../components/container/PageContainer';
 
 export default {
-  title: 'Custom Component/Container/PageContainer',
+  title: 'Custom Component/5. Layout & Shell/PageContainer',
   component: PageContainer,
   tags: ['autodocs'],
   parameters: {

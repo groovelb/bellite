@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import { QuotedContainer } from '../../../components/typography';
 
 export default {
-  title: 'Custom Component/Typography/QuotedContainer',
+  title: 'Custom Component/2. Landing Sections/QuotedContainer',
   component: QuotedContainer,
   tags: ['autodocs'],
   parameters: {

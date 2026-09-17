@@ -4,7 +4,7 @@
  * 수동 편집 금지. 재생성: pnpm generate-structure
  */
 export default {
-  "generatedAt": "2026-09-17T09:51:35.378Z",
+  "generatedAt": "2026-09-17T16:24:09.676Z",
   "root": {
     "name": "App",
     "kind": "component",
@@ -26,8 +26,8 @@ export default {
             "kind": "component",
             "category": "components/navigation",
             "file": "components/navigation/GNB.jsx",
-            "storyTitle": "Custom Component/Navigation/GNB",
-            "storyId": "custom-component-navigation-gnb",
+            "storyTitle": "Custom Component/5. Layout & Shell/GNB",
+            "storyId": "custom-component-5-layout-shell-gnb",
             "children": [],
             "hooks": [],
             "data": [
@@ -61,8 +61,8 @@ export default {
                 "kind": "component",
                 "category": "components/layout",
                 "file": "components/layout/StickyBackground.jsx",
-                "storyTitle": "Custom Component/Layout/StickyBackground",
-                "storyId": "custom-component-layout-stickybackground",
+                "storyTitle": "Custom Component/1. Hero/StickyBackground",
+                "storyId": "custom-component-1-hero-stickybackground",
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -72,8 +72,8 @@ export default {
                 "kind": "component",
                 "category": "components/media",
                 "file": "components/media/VideoScrubbing.jsx",
-                "storyTitle": "Custom Component/Media/VideoScrubbing",
-                "storyId": "custom-component-media-videoscrubbing",
+                "storyTitle": "Custom Component/4. Media/VideoScrubbing",
+                "storyId": "custom-component-4-media-videoscrubbing",
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -83,8 +83,8 @@ export default {
                 "kind": "component",
                 "category": "components/string-tune/scroll",
                 "file": "components/string-tune/scroll/Parallax.jsx",
-                "storyTitle": null,
-                "storyId": null,
+                "storyTitle": "Custom Component/3. Motion & Reveal/Parallax",
+                "storyId": "custom-component-3-motion-reveal-parallax",
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -115,8 +115,8 @@ export default {
                 "kind": "component",
                 "category": "components/container",
                 "file": "components/container/ContentArea.jsx",
-                "storyTitle": "Custom Component/Container/ContentArea",
-                "storyId": "custom-component-container-contentarea",
+                "storyTitle": "Custom Component/2. Landing Sections/ContentArea",
+                "storyId": "custom-component-2-landing-sections-contentarea",
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -126,8 +126,8 @@ export default {
                 "kind": "component",
                 "category": "components/layout",
                 "file": "components/layout/LineGrid.jsx",
-                "storyTitle": "Custom Component/Layout/LineGrid",
-                "storyId": "custom-component-layout-linegrid",
+                "storyTitle": "Custom Component/2. Landing Sections/LineGrid",
+                "storyId": "custom-component-2-landing-sections-linegrid",
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -154,8 +154,8 @@ export default {
                 "kind": "component",
                 "category": "components/media",
                 "file": "components/media/VideoSlide.jsx",
-                "storyTitle": null,
-                "storyId": null,
+                "storyTitle": "Custom Component/4. Media/VideoSlide",
+                "storyId": "custom-component-4-media-videoslide",
                 "children": [
                   {
                     "name": "VideoScrubbing",
@@ -176,8 +176,8 @@ export default {
                 "kind": "component",
                 "category": "components/typography",
                 "file": "components/typography/MarqueeText.jsx",
-                "storyTitle": "Custom Component/Typography/MarqueeText",
-                "storyId": "custom-component-typography-marqueetext",
+                "storyTitle": "Custom Component/2. Landing Sections/MarqueeText",
+                "storyId": "custom-component-2-landing-sections-marqueetext",
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -249,8 +249,8 @@ export default {
                 "kind": "component",
                 "category": "components/container",
                 "file": "components/container/SectionContainer.jsx",
-                "storyTitle": "Custom Component/Container/SectionContainer",
-                "storyId": "custom-component-container-sectioncontainer",
+                "storyTitle": "Custom Component/2. Landing Sections/SectionContainer",
+                "storyId": "custom-component-2-landing-sections-sectioncontainer",
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -291,8 +291,8 @@ export default {
                 "kind": "component",
                 "category": "components/layout",
                 "file": "components/layout/BrokenGridGallery.jsx",
-                "storyTitle": "Custom Component/Layout/BrokenGridGallery",
-                "storyId": "custom-component-layout-brokengridgallery",
+                "storyTitle": "Custom Component/2. Landing Sections/BrokenGridGallery",
+                "storyId": "custom-component-2-landing-sections-brokengridgallery",
                 "children": [],
                 "hooks": [],
                 "data": []

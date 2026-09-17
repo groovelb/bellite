@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import HorizontalScroll from './HorizontalScroll';
 
 export default {
-  title: 'Custom Component/Media/HorizontalScroll',
+  title: 'Custom Component/4. Media/HorizontalScroll',
   component: HorizontalScroll,
   tags: ['autodocs'],
   parameters: {
