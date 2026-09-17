@@ -41,6 +41,11 @@ function nodeToTree(node) {
   const nameCount = {};
 
   for (const child of node.children || []) {
+    // 다른 가지에서 이미 펼친 파일은 참조 리프로만 표시한다
+    if (child.ref) {
+      out[child.name + ' (참조)'] = '이미 펼친 가지';
+      continue;
+    }
     // Context/Provider는 설명만 남기고 하위 탐색을 멈춘다
     if (isContextName(child.name)) {
       out[child.name] = DESCRIPTIONS[child.name] || 'Context/Provider';

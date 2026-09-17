@@ -4,7 +4,7 @@
  * 수동 편집 금지. 재생성: pnpm generate-structure
  */
 export default {
-  "generatedAt": "2026-09-17T07:25:52.163Z",
+  "generatedAt": "2026-09-17T09:16:36.560Z",
   "root": {
     "name": "App",
     "kind": "component",
@@ -162,8 +162,7 @@ export default {
                     "kind": "component",
                     "category": "components/media",
                     "file": "components/media/VideoScrubbing.jsx",
-                    "storyTitle": null,
-                    "storyId": null,
+                    "ref": true,
                     "children": [],
                     "hooks": [],
                     "data": []
@@ -209,8 +208,7 @@ export default {
                 "kind": "component",
                 "category": "components/layout",
                 "file": "components/layout/StickyBackground.jsx",
-                "storyTitle": "Custom Component/Layout/StickyBackground",
-                "storyId": "custom-component-layout-stickybackground",
+                "ref": true,
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -220,8 +218,7 @@ export default {
                 "kind": "component",
                 "category": "components/media",
                 "file": "components/media/VideoScrubbing.jsx",
-                "storyTitle": null,
-                "storyId": null,
+                "ref": true,
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -284,8 +281,7 @@ export default {
                 "kind": "component",
                 "category": "components/container",
                 "file": "components/container/SectionContainer.jsx",
-                "storyTitle": "Custom Component/Container/SectionContainer",
-                "storyId": "custom-component-container-sectioncontainer",
+                "ref": true,
                 "children": [],
                 "hooks": [],
                 "data": []

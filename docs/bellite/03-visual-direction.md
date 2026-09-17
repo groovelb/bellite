@@ -29,7 +29,7 @@
 - **테마 하나로 운영**: `src/styles/themes/darkTheme.js`가 라이트 테마를 그대로 다시 내보낸다. 브라우저 다크 모드가 강제로 끼어드는 것을 막으려는 선택이고, 그래서 이 문서에는 색 값이 한 벌만 있다.
 - **원문과 달라진 색 값**: 원문 디자인 문서의 Ballet Pink `#F5DDD4`와 Rose Gold `#C9A89D`는 코드에서 `#FDEFFB`와 `#f4d2ca`로 바뀌어 있다. 코드 값을 기준으로 적었다.
 - **악센트와 배경이 같은 값**: `secondary.main`과 `background.default`가 둘 다 `#f4d2ca`다. 액센트가 지면과 구분되지 않으므로 사용자 확인이 필요하다 (Q6).
-- **분량**: 222줄(권장 200). 4절 에셋별 방향을 `appendix-asset-direction.md`로 분리 가능하다.
+- **분량**: 224줄(권장 200). 4절 에셋별 방향을 `appendix-asset-direction.md`로 분리 가능하다.
 - **4절 잠정**: 원문의 이미지 카테고리 지시와 실제 에셋 폴더를 맞춰 역추출했다. 촬영 사양은 결과물에서 읽은 것이라 승인 전이다 (Q5).
 
 ---
@@ -63,7 +63,7 @@
 - 공간 모델: 유동 / 고정 / 혼합. 아키타입: `src/data/layoutTaxonomyData.js`의 id. 구분 언어: 선 / 면 / 여백.
 - 신호 값: text(none·micro·short·long·mixed), media(none·accent·balanced·dominant), repeat(single·few·many), hierarchy(flat·two-tier·deep).
 - 구간별 아키타입 (Landing 내부, 잠정 Q4): Hero `video-hero` + `split-screen`, Value Pillars `feature-grid` + `column-grid`, Silhouette `pinned-section` + `horizontal-scroll`, Inside Mood `sticky-scroll-reveal` + `full-bleed-content`, Signature `alternating-rows` + `asymmetric-balance`, Origin `kinetic-type` + `scroll-triggered-reveal`, Daily Mood `broken-grid` + `coming-soon-teaser`.
-- 전역 리듬: 구간은 대부분 화면 높이 한 장을 차지하고, 스크롤이 필요한 구간은 화면 높이의 배수로 늘려 고정 구간을 만든다. 구간 경계는 면이 아니라 1px 선과 넓은 여백으로 표시한다. 좌우 여백은 반응형 네 단계 토큰을 따르고, 대형 화면에서는 폭 상한 1440에서 콘텐츠를 멈춘다.
+- 전역 리듬: 구간은 대부분 화면 높이 한 장(100vh)을 차지하고, 스크롤이 필요한 구간은 화면 높이의 배수로 늘려 고정 구간을 만든다. 구간 경계는 면이 아니라 1px 선과 넓은 여백으로 표시한다. 좌우 여백은 반응형 네 단계 토큰을 따르고, 대형 화면에서는 폭 상한 1440에서 콘텐츠를 멈춘다.
 
 ---
 
@@ -85,19 +85,20 @@
 
 - `secondary.main`도 Rose Gold와 같은 값이고, `common.black`과 `common.white`도 같은 값으로 지정돼 있다.
 - 상태 색(error, warning, info, success)은 브랜드 색 밖에 따로 둔다. 브랜드 표면에는 쓰지 않는다.
-- 확장 팔레트로 `soulMuted #E8CCC2`, `urbanSoft #2A2A2A`, `urbanMuted #4A4A4A`가 있다.
+- 확장 팔레트는 `soulLight #FAF0ED`, `soulMuted #E8CCC2`, `urbanSoft #2A2A2A`, `urbanMuted #4A4A4A`다.
+- 원문이 쓰던 점 표기 `soul.light`, `soul.muted`, `urban.soft`, `urban.muted`는 코드에서 `brand` 아래 한 단계 키로 합쳐졌다.
 
 ### 3.2 타이포
 
 | 역할 | 서체 | 방향 (웨이트·크기·자간·행간) | MUI variant |
 |---|---|---|---|
 | 브랜드 로고 | Chandia 셰리프 필기체 | 400, 로고에만 직접 지정 | h1에 서체만 교체 |
-| 디스플레이 | Adamina 세리프 | 400, 3.5~9rem, 자간 -0.02em | h1 |
-| 구간 제목 | Adamina 세리프 | 400, 1.75~4.5rem, 행간 1.15 | h2 |
-| 소제목 | Adamina 세리프 | 400, 1.25~3rem, 자간 -0.01em | h3, h4 |
-| 라벨 | Pretendard Variable | 600, 1~1.7rem, 행간 1.4~1.5 | h5, h6 |
-| 본문 | Pretendard Variable | 400, 1.125rem·1rem, 행간 1.7 | body1, body2 |
-| 캡션 | Pretendard Variable | 400, 0.75rem, 자간 0.02em | caption |
+| 디스플레이 | Adamina 세리프 | 400, 3.5rem~9rem(56px~144px), 자간 -0.02em | h1 |
+| 구간 제목 | Adamina 세리프 | 400, 1.75rem~4.5rem(28px~72px), 행간 1.15 | h2 |
+| 소제목 | Adamina 세리프 | 400, 1.25rem~3rem(20px~48px), 자간 -0.01em | h3, h4 |
+| 라벨 | Pretendard Variable | 600, 1rem~1.7rem(16px~27px), 행간 1.4~1.5 | h5, h6 |
+| 본문 | Pretendard Variable | 400, 1.125rem·1rem(18px·16px), 행간 1.7 | body1, body2 |
+| 캡션 | Pretendard Variable | 400, 0.75rem(12px), 자간 0.02em | caption |
 | 오버라인 | Pretendard Variable | 500, 0.75rem, 자간 0.1em, 대문자 | overline |
 | 버튼 | Pretendard Variable | 500, 0.875rem, 자연 케이스 | button |
 
@@ -106,6 +107,7 @@
 - 세리프 폴백은 Georgia와 Times New Roman이다. 본문 폴백에는 한글 시스템 서체가 들어 있다.
 - 서체가 세 벌인 이유: Chandia는 자수 필기체라 로고 한 곳에만 쓰고, 읽어야 하는 제목은 Adamina가 맡는다.
 - 디스플레이 크기는 clamp와 브레이크포인트별 고정값을 함께 지정해 네 단계로 끊어 커진다.
+- 구간 코드는 테마 variant 밖에서 2.25rem(36px) 같은 중간 크기를 직접 지정하기도 한다. 표의 값이 기준이고 구간 지정은 예외다.
 
 ### 3.3 형태·표면·모션
 
@@ -117,11 +119,11 @@
 | 선 | 1px 한 종류만 | `divider` 10%, 구간 경계와 열 분할 |
 | 간격 | 8px 그리드 | `spacing: 8`, 시멘틱 토큰 여섯 묶음 |
 | 브레이크포인트 | 대형 화면 폭 상한 | 0 / 600 / 900 / 1200 / 1440 |
-| 전환 템포 | 기본과 느린 강조 | standard 300, slow 600, slower 900 (ms) |
+| 전환 템포 | 기본과 느린 강조 | standard 300ms, slow 600ms, slower 900ms |
 | 이징 | 점멸 없는 한 곡선 | `cubic-bezier(0.4, 0, 0.2, 1)` |
 | 아이콘 | 가는 선 아이콘 | lucide-react, 1.5px 스트로크 |
 
-비고: 시멘틱 간격 토큰은 inset, gap, stack, inline, section, page 여섯 묶음이고 대부분 8의 배수이며 최소 단위는 4px다. 이징은 기본 곡선과 별칭 하나가 같은 값이라 사실상 한 곡선만 쓴다.
+비고: 시멘틱 간격 토큰은 inset, gap, stack, inline, section, page 여섯 묶음이고 대부분 8의 배수이며 최소 단위는 4px다. 공용 입력과 링크의 짧은 상태 전환은 shorter 200ms를 쓴다. 구간 코드에는 10px 수준의 미세 오프셋도 있고, 이는 8px 그리드의 예외다. 이징은 기본 곡선과 별칭 하나가 같은 값이라 사실상 한 곡선만 쓴다.
 
 ---
 

@@ -28,7 +28,7 @@
 - **3.1절 근거**: 01 4.2절의 확정 6행을 그대로 받았다. 영속성은 정적 JSON과 정적 에셋 import라는 코드 사실로 확인했다. 두 대상(StoragePoint, BalletObject)은 데이터에만 있어 "보이는 페이지"가 없다.
 - **4절 압축**: 원문 5종에 흩어져 있던 UI 패턴과 인터랙션 지시를 원칙 5줄로 묶었다.
 - **5절 근거**: 스타터킷 `src/components`와 파일 단위 해시 대조. 배럴 파일과 스토리 파일, 문서화 도구 복사본은 제외했다.
-- **분량**: 257줄(권장 250). 1절 시나리오 비고를 `appendix-scenario-notes.md`로 분리 가능하다.
+- **분량**: 264줄(권장 250). 1절 시나리오 비고를 `appendix-scenario-notes.md`로 분리 가능하다.
 
 ---
 
@@ -187,7 +187,11 @@ Landing (/)
 | `BalletObject` | 발레 오브제 | `balletObject` | (정적) | 없음 |
 | `MediaAsset` | 미디어 에셋 | `mediaAsset` | (정적) | 없음 |
 
-비고: 서버 데이터가 없는 프로젝트다. 예약어 충돌 검사 대상인 테이블명이 하나도 없다. `/supabase-integration`을 부르게 되면 이 표부터 다시 정한다.
+비고:
+
+- 서버 데이터가 없는 프로젝트다. 예약어 충돌 검사 대상인 테이블명이 하나도 없다. `/supabase-integration`을 부르게 되면 이 표부터 다시 정한다.
+- 콘텐츠 파일이 쓰는 키는 `h1`, `h2`, `description`, `message`, `subText`, `sectionLabel`, `titleEn`, `titleKo`, `image`, `video`다.
+- 컴포넌트 쪽 상수와 props 이름으로는 `headline`, `subheadline`, `logo`, `label`, `items`, `children`, `backgroundImage`가 쓰인다. 사전의 식별자와 혼동하지 않는다.
 
 ---
 
@@ -206,6 +210,7 @@ Landing (/)
 - 원칙 1: 배경이 고정된 동안 문구만 올라가고, 목표 지점에 닿으면 고정이 풀려 다음 구간으로 이어진다.
 - 원칙 3: 트랙의 높이는 장면 수와 화면 폭에서 계산한다. 화면이 좁으면 장면이 넓어지고 트랙이 길어진다.
 - 원칙 5: 이징을 한 곡선으로 통일한다. 구간 코드의 전환 길이는 제각각이고 테마의 길이 토큰은 03 3.3절에 있다.
+- 기대는 수단: 원칙 1~3은 framer-motion의 `useScroll`과 `useTransform`으로 스크롤 진행도를 읽는다. 진입 판정은 `threshold` 값으로, 배경 어둡기는 `overlayOpacity`와 `linear-gradient`로, 정지 배경은 `background-image`로 다룬다. 흐림 연출은 `blurAmount`를 받는 컴포넌트가 따로 있다.
 
 ---
 
@@ -240,10 +245,12 @@ Landing (/)
 비고:
 
 - **합계**: 재활용 21 · 수정 9 · 신규 50 (파일 기준). 표는 23행이고 미연결분은 묶음 세 행으로 접었다.
-- **구분 근거**: 스타터킷 `src/components` 116개와 이 저장소 `src/components` 103개를 상대 경로별 해시로 대조했다. 배럴 파일, 스토리 파일, 문서화 도구 복사본을 빼면 비교 대상은 68개다. 같은 경로에 같은 내용이면 재활용, 다르면 수정, 이 저장소에만 있으면 신규다.
-- **sections와 pages**: 스타터킷에 없는 폴더라 전부 신규다. 섹션 8개와 페이지 4개(LandingPage 포함)가 여기 들어간다.
+- **구분 근거**: 스타터킷 `src/components/` 116개와 이 저장소 `src/components/` 103개를 상대 경로별 해시로 대조했다. 배럴 파일, 스토리 파일, 문서화 도구 복사본을 빼면 비교 대상은 68개다. 같은 경로에 같은 내용이면 재활용, 다르면 수정, 이 저장소에만 있으면 신규다.
+- **sections와 pages**: 스타터킷에 없는 폴더라 전부 신규다. `src/sections/`의 섹션 8개와 `src/pages/`의 페이지 4개(LandingPage 포함)가 여기 들어간다.
 - **미연결의 뜻**: 저장소에는 있으나 `LandingPage`가 가져다 쓰지 않는 파일이다. 페이지 조립 대상이 아니라 스타터킷에서 따라온 자산이거나 이후 구간용 재고다.
 - **미연결 페이지**: `Page1`, `Page2`, `Page3`는 라우터 예시용이라 위 묶음에 들어 있다.
+- **미연결 예시**: 재활용 묶음에는 `BentoGrid`, `CarouselIndicator`, `FullPageContainer`가, 신규 묶음에는 `BlurRevealTypography`, `InteractiveHotspot`이 들어 있다. 원문 구현 문서가 지목한 이름이지만 조립에는 쓰이지 않았다.
+- **미연결 폴더**: `components/shared/` 7종과 `components/card/` 2종, `components/typography/`의 일부가 조립 밖에 있다.
 - **재활용 제외**: 카드 계열과 이미지 전환 컴포넌트를 쓰지 않았다. 구간 사이를 선과 여백으로 나누기로 해 카드 묶음이 필요 없었다.
 
 ---
