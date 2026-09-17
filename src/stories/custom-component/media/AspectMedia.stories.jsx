@@ -6,7 +6,7 @@ import AspectMedia from '../../../components/media/AspectMedia';
 import { mediaAssets } from '../../../data/mediaAssets';
 
 export default {
-  title: 'Custom Component/Media/AspectMedia',
+  title: 'Component/4. Media/AspectMedia',
   component: AspectMedia,
   tags: ['autodocs'],
   parameters: {

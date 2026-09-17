@@ -4,7 +4,7 @@ import { CenteredAsideLayout } from './CenteredAsideLayout';
 import { GridContent } from '../storybookDocumentation/GridContent';
 
 export default {
-  title: 'Custom Component/CenteredAsideLayout',
+  title: 'Custom Component/Layout/CenteredAsideLayout',
   component: CenteredAsideLayout,
   tags: ['autodocs'],
   parameters: {

@@ -12,7 +12,7 @@ import { BentoGrid, BentoItem } from '../../../components/layout/BentoGrid';
 import { BENTO_PRESETS } from '../../../components/layout/bentoPresets';
 
 export default {
-  title: 'Custom Component/Layout/BentoGrid',
+  title: 'Component/8. Layout/BentoGrid',
   component: BentoGrid,
   tags: ['autodocs'],
   parameters: {

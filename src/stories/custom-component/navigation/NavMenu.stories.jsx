@@ -136,7 +136,7 @@ function VerticalDemo() {
 }
 
 export default {
-  title: 'Custom Component/Navigation/NavMenu',
+  title: 'Component/10. Navigation/NavMenu',
   component: NavMenu,
   tags: ['autodocs'],
   parameters: {

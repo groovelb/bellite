@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -12,12 +13,74 @@ import {
 } from '../../components/storybookDocumentation';
 import landingContent from '../../data/landingPageContent.json';
 
+// 자세 장면이 참조하는 스틸을 행 옆에 그리기 위한 URL 표
+const SILHOUETTE_URLS = import.meta.glob('../../assets/silhouette/*.{jpeg,png}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+});
+
 export default {
   title: 'Overview/Bellite/05 Pillar Data',
   parameters: {
     layout: 'padded',
   },
 };
+
+/** 슬라이드의 image 파일 이름을 실제 URL로 바꾼다 */
+const slideImageUrl = (name) => SILHOUETTE_URLS[`../../assets/silhouette/${name}`] || null;
+
+/**
+ * 자세 장면 표. 참조하는 스틸을 행 왼쪽에 함께 그린다
+ *
+ * Props:
+ * @param {array} slides - 슬라이드 배열 [Required]
+ *
+ * Example usage:
+ * <SceneTable slides={ slides } />
+ */
+function SceneTable({ slides }) {
+  return (
+    <TableContainer sx={ { mb: 4 } }>
+      <Table size="small">
+        <TableHead>
+          <TableRow>
+            <TableCell sx={ { fontWeight: 600, width: 96 } }>미리보기</TableCell>
+            <TableCell sx={ { fontWeight: 600 } }>id</TableCell>
+            <TableCell sx={ { fontWeight: 600 } }>titleEn</TableCell>
+            <TableCell sx={ { fontWeight: 600 } }>titleKo</TableCell>
+            <TableCell sx={ { fontWeight: 600 } }>value</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          { slides.map((slide) => (
+            <TableRow key={ slide.id }>
+              <TableCell>
+                <Box
+                  sx={ { width: 80, aspectRatio: '4 / 3', backgroundColor: 'grey.100', overflow: 'hidden' } }
+                >
+                  { slideImageUrl(slide.image) && (
+                    <Box
+                      component="img"
+                      src={ slideImageUrl(slide.image) }
+                      alt={ slide.image }
+                      loading="lazy"
+                      sx={ { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } }
+                    />
+                  ) }
+                </Box>
+              </TableCell>
+              <TableCell sx={ { fontFamily: 'monospace', fontSize: 12 } }>{ slide.id }</TableCell>
+              <TableCell sx={ { fontSize: 13 } }>{ slide.titleEn }</TableCell>
+              <TableCell sx={ { fontSize: 13 } }>{ slide.titleKo }</TableCell>
+              <TableCell sx={ { fontSize: 13 } }>{ slide.value }</TableCell>
+            </TableRow>
+          )) }
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}
 
 /** 섹션 id로 섹션 데이터를 찾는다 */
 const findSection = (id) => landingContent.sections.find((s) => s.id === id);
@@ -106,10 +169,7 @@ export const Default = {
             title="PostureScene · 자세 장면"
             description={ `sections[silhouette].slides · ${slides.length}건 · 일상 동작과 발레 동작이 겹치는 장면` }
           />
-          <ArrayTable
-            rows={ slides }
-            columns={ ['id', 'titleEn', 'titleKo', 'value', 'image', 'video'] }
-          />
+          <SceneTable slides={ slides } />
 
           <SectionTitle
             title="PostureScene · 장면 설명"

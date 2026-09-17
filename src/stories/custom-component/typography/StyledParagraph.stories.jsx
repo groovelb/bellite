@@ -7,7 +7,7 @@ import {
 } from '../../../components/typography';
 
 export default {
-  title: 'Custom Component/Typography/StyledParagraph',
+  title: 'Component/1. Typography/StyledParagraph',
   component: StyledParagraph,
   tags: ['autodocs'],
   parameters: {

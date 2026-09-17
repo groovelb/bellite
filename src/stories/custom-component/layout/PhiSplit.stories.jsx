@@ -11,7 +11,7 @@ import { DocumentTitle, PageContainer, SectionTitle, GridContent } from '../../.
 import { PhiSplit, PHI } from '../../../components/layout/PhiSplit';
 
 export default {
-  title: 'Custom Component/Layout/PhiSplit',
+  title: 'Component/8. Layout/PhiSplit',
   component: PhiSplit,
   tags: ['autodocs'],
   parameters: {

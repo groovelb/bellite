@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -12,12 +13,53 @@ import {
 } from '../../components/storybookDocumentation';
 import landingContent from '../../data/landingPageContent.json';
 
+// 구간을 대표하는 에셋을 행 옆에 그리기 위한 URL 표
+const ASSET_URLS = import.meta.glob('../../assets/**/*.{png,jpg,jpeg}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+});
+
+// 섹션 id와 에셋 폴더의 짝. mediaAssets.js의 묶음 이름을 따른다
+const SECTION_COVER = {
+  hero: '../../assets/hero/hero_bg_2.jpeg',
+  silhouette: '../../assets/silhouette/s1.jpeg',
+  insideMood: '../../assets/silhouette/cloth_bg_pink.png',
+  signature: '../../assets/signature/aerial-shot.jpeg',
+};
+
 export default {
   title: 'Overview/Bellite/06 Content Data',
   parameters: {
     layout: 'padded',
   },
 };
+
+/**
+ * 구간 대표 이미지 한 칸. 짝이 없는 구간은 빈 칸으로 둔다
+ *
+ * Props:
+ * @param {string} sectionId - 섹션 id [Required]
+ *
+ * Example usage:
+ * <SectionCover sectionId="hero" />
+ */
+function SectionCover({ sectionId }) {
+  const src = ASSET_URLS[SECTION_COVER[sectionId]] || null;
+  return (
+    <Box sx={ { width: 72, aspectRatio: '4 / 3', backgroundColor: 'grey.100', overflow: 'hidden' } }>
+      { src && (
+        <Box
+          component="img"
+          src={ src }
+          alt={ sectionId }
+          loading="lazy"
+          sx={ { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } }
+        />
+      ) }
+    </Box>
+  );
+}
 
 /** 섹션 카피에서 뽑아 쓰는 키 순서 */
 const COPY_KEYS = ['sectionLabel', 'h1', 'h2', 'message', 'subText', 'description'];
@@ -149,10 +191,30 @@ export const Default = {
             title="sections"
             description={ `구간 정의 ${sections.length}건 · order 순서와 증명 대상 연결` }
           />
-          <ArrayTable
-            rows={ sectionRows }
-            columns={ ['order', 'id', 'name', 'nameKo', 'valueConnection'] }
-          />
+          <TableContainer sx={ { mb: 4 } }>
+            <Table size="small">
+              <TableHead>
+                <TableRow>
+                  <TableCell sx={ { fontWeight: 600, width: 88 } }>미리보기</TableCell>
+                  <TableCell sx={ { fontWeight: 600, width: 60 } }>order</TableCell>
+                  <TableCell sx={ { fontWeight: 600 } }>id</TableCell>
+                  <TableCell sx={ { fontWeight: 600 } }>name</TableCell>
+                  <TableCell sx={ { fontWeight: 600 } }>valueConnection</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                { sectionRows.map((row) => (
+                  <TableRow key={ row.id }>
+                    <TableCell><SectionCover sectionId={ row.id } /></TableCell>
+                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 12 } }>{ row.order }</TableCell>
+                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 12 } }>{ row.id }</TableCell>
+                    <TableCell sx={ { fontSize: 13 } }>{ row.name }{ row.nameKo ? ` (${row.nameKo})` : '' }</TableCell>
+                    <TableCell sx={ { fontFamily: 'monospace', fontSize: 12 } }>{ row.valueConnection }</TableCell>
+                  </TableRow>
+                )) }
+              </TableBody>
+            </Table>
+          </TableContainer>
 
           <SectionTitle
             title="BrandNarrative · 브랜드 서사"

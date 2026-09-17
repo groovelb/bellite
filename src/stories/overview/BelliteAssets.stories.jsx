@@ -13,13 +13,7 @@ import {
   PageContainer,
   SectionTitle,
 } from '../../components/storybookDocumentation';
-import { mediaAssets } from '../../data/mediaAssets';
-
-// 5MB를 넘는 파일 4개는 번들 인라인을 피하려고 ?url 로 불러온다
-import heroBg2Url from '../../assets/hero/hero_bg_2.jpeg?url';
-import heroBgOptimizedUrl from '../../assets/hero/hero_bg_optimized.mp4?url';
-import insideMoodVideoUrl from '../../assets/inside-mood/moodbaord.mp4?url';
-import silhouetteVideo3Url from '../../assets/silhouette/s3.mp4?url';
+import assetInventory from '../../data/assetInventory.js';
 
 export default {
   title: 'Overview/Bellite/07 Assets',
@@ -28,139 +22,86 @@ export default {
   },
 };
 
-const slides = mediaAssets.silhouette.slides;
+// importKey를 실제 URL로 바꾸는 표. 인벤토리의 모든 항목을 한 번에 훑는다
+const ASSET_URLS = import.meta.glob(
+  '../../assets/**/*.{png,jpg,jpeg,webp,gif,svg,avif,mp4,webm,mp3,wav,woff,woff2}',
+  { eager: true, query: '?url', import: 'default' },
+);
 
-/**
- * 에셋 카탈로그
- *
- * 사용 중 판정: src/data/mediaAssets.js 에 import 되어 등록된 파일.
- * 등록되지 않은 파일은 아래 Unregistered 표로 내린다.
- */
-const ASSET_GROUPS = [
-  {
-    dir: 'src/assets/hero',
-    label: 'Hero',
-    note: '브랜드 선언 구간 배경. 기본값은 hero_bg_2.jpeg 와 hero_bg_optimized.mp4',
-    items: [
-      { name: 'hero_bg_1.jpeg', src: mediaAssets.hero.images.bg1, kind: 'image' },
-      { name: 'hero_bg_2.jpeg', src: heroBg2Url, kind: 'image', large: true },
-      { name: 'hero_bg.png', src: mediaAssets.hero.images.bgPng, kind: 'image' },
-      { name: 'hero_bg.mp4', src: mediaAssets.hero.videos.bg, kind: 'video' },
-      { name: 'hero_bg_3x2.mp4', src: mediaAssets.hero.videos.bg3x2, kind: 'video' },
-      { name: 'hero_bg_optimized.mp4', src: heroBgOptimizedUrl, kind: 'video', large: true },
-    ],
-  },
-  {
-    dir: 'src/assets/silhouette',
-    label: 'Silhouette',
-    note: '자세 장면 네 건의 스틸과 영상, 그리고 보조 컷 두 장',
-    items: [
-      { name: 's1.jpeg', src: slides.crosswalk.image, kind: 'image' },
-      { name: 's2.jpeg', src: slides.subway.image, kind: 'image' },
-      { name: 's3.jpeg', src: slides.cafe.image, kind: 'image' },
-      { name: 's4.jpeg', src: slides.stairs.image, kind: 'image' },
-      { name: 's1.mp4', src: slides.crosswalk.video, kind: 'video' },
-      { name: 's2.mp4', src: slides.subway.video, kind: 'video' },
-      { name: 's3.mp4', src: silhouetteVideo3Url, kind: 'video', large: true },
-      { name: 's4.mp4', src: slides.stairs.video, kind: 'video' },
-      { name: 'cloth_bg_pink.png', src: mediaAssets.silhouette.extras.clothBgPink, kind: 'image' },
-      { name: 'producut_shot_black_1.png', src: mediaAssets.silhouette.extras.productShotBlack, kind: 'image' },
-    ],
-  },
-  {
-    dir: 'src/assets/inside-mood',
-    label: 'Inside Mood',
-    note: '내부 오브제 전환 구간의 배경 영상',
-    items: [
-      { name: 'moodbaord.mp4', src: insideMoodVideoUrl, kind: 'video', large: true },
-    ],
-  },
-  {
-    dir: 'src/assets/signature',
-    label: 'Signature',
-    note: '보관과 자수 디테일 구간의 사진',
-    items: [
-      { name: 'aerial-shot.jpeg', src: mediaAssets.signature.images.aerialShot, kind: 'image' },
-      { name: 'moodbaord1.jpeg', src: mediaAssets.signature.images.moodboard1, kind: 'image' },
-      { name: 'moodbaord2.jpeg', src: mediaAssets.signature.images.moodboard2, kind: 'image' },
-    ],
-  },
-  {
-    dir: 'src/assets/dialy-mood',
-    label: 'Daily Mood',
-    note: '마지막 구간의 일상 장면 다섯 컷',
-    items: [
-      { name: 'mood1_morning.jpeg', src: mediaAssets.dailyMood.images.morning, kind: 'image' },
-      { name: 'mood2_desk.jpeg', src: mediaAssets.dailyMood.images.desk, kind: 'image' },
-      { name: 'mood3_commute.jpeg', src: mediaAssets.dailyMood.images.commute, kind: 'image' },
-      { name: 'mood4_afet_ballete.jpeg', src: mediaAssets.dailyMood.images.afterBallet, kind: 'image' },
-      { name: 'mood5_home.jpeg', src: mediaAssets.dailyMood.images.home, kind: 'image' },
-    ],
-  },
+// src/data/mediaAssets.js가 import해 등록한 파일 (25건)
+const REGISTERED = new Set([
+  'src/assets/hero/hero_bg_1.jpeg',
+  'src/assets/hero/hero_bg_2.jpeg',
+  'src/assets/hero/hero_bg.png',
+  'src/assets/hero/hero_bg.mp4',
+  'src/assets/hero/hero_bg_3x2.mp4',
+  'src/assets/hero/hero_bg_optimized.mp4',
+  'src/assets/silhouette/s1.jpeg',
+  'src/assets/silhouette/s2.jpeg',
+  'src/assets/silhouette/s3.jpeg',
+  'src/assets/silhouette/s4.jpeg',
+  'src/assets/silhouette/s1.mp4',
+  'src/assets/silhouette/s2.mp4',
+  'src/assets/silhouette/s3.mp4',
+  'src/assets/silhouette/s4.mp4',
+  'src/assets/silhouette/cloth_bg_pink.png',
+  'src/assets/silhouette/producut_shot_black_1.png',
+  'src/assets/inside-mood/moodbaord.mp4',
+  'src/assets/signature/aerial-shot.jpeg',
+  'src/assets/signature/moodbaord1.jpeg',
+  'src/assets/signature/moodbaord2.jpeg',
+  'src/assets/dialy-mood/mood1_morning.jpeg',
+  'src/assets/dialy-mood/mood2_desk.jpeg',
+  'src/assets/dialy-mood/mood3_commute.jpeg',
+  'src/assets/dialy-mood/mood4_afet_ballete.jpeg',
+  'src/assets/dialy-mood/mood5_home.jpeg',
+]);
+
+// 이 크기를 넘으면 미리 받지 않는다
+const HEAVY_BYTES = 5 * 1024 * 1024;
+
+const FOLDER_NOTES = {
+  'src/assets/hero': '브랜드 선언 구간 배경. 기본값은 hero_bg_2.jpeg와 hero_bg_optimized.mp4',
+  'src/assets/silhouette': '자세 장면 네 건의 스틸과 영상, 보조 컷 두 장',
+  'src/assets/inside-mood': '내부 오브제 전환 구간의 배경 영상',
+  'src/assets/signature': '보관과 자수 디테일 구간의 사진',
+  'src/assets/dialy-mood': '마지막 구간의 일상 장면 다섯 컷',
+  'src/assets/font': '브랜드 디스플레이 서체. @font-face로 불러온다',
+  'src/assets/(root)': '프로젝트 템플릿에서 따라온 파일',
+  'public/(root)': '빌드 산출물에 그대로 복사되는 공개 파일',
+};
+
+/** 항목의 실제 URL. public 파일은 인벤토리의 url을, 나머지는 glob 결과를 쓴다 */
+const assetUrl = (item) => item.url || ASSET_URLS[item.importKey] || null;
+
+/** 바이트를 MB 문자열로 */
+const toMb = (bytes) => `${(bytes / 1048576).toFixed(2)}MB`;
+
+/** 인벤토리 항목을 폴더 키로 묶는다 */
+const groupKey = (item) => `${item.root}/${item.folder || '(root)'}`;
+
+const GROUPS = assetInventory.items.reduce((acc, item) => {
+  const key = groupKey(item);
+  (acc[key] = acc[key] || []).push(item);
+  return acc;
+}, {});
+
+const GROUP_ORDER = [
+  'src/assets/hero',
+  'src/assets/silhouette',
+  'src/assets/inside-mood',
+  'src/assets/signature',
+  'src/assets/dialy-mood',
+  'src/assets/font',
+  'src/assets/(root)',
+  'public/(root)',
 ];
 
-/** mediaAssets.js 에 등록되지 않은 파일 */
-const UNREGISTERED = [
-  {
-    name: 'Chandia_PERSONAL_USE_ONLY.otf',
-    dir: 'src/assets/font',
-    note: 'index.html 과 .storybook/preview-head.html 의 @font-face 로 불러온다',
-  },
-  {
-    name: 'ChandiaDecorative_PERSONAL_USE_ONLY.otf',
-    dir: 'src/assets/font',
-    note: '@font-face 로 선언되어 있고 sx 로 직접 지정할 때만 쓴다',
-  },
-  {
-    name: 'react.svg',
-    dir: 'src/assets',
-    note: '프로젝트 템플릿에서 따라온 파일. 어디에서도 참조하지 않는다',
-  },
-];
-
-/**
- * 라벨과 미디어를 세로로 쌓은 단일 셀. 원본 비율을 유지한다.
- *
- * Props:
- * @param {string} label - 파일 이름 [Required]
- * @param {string} src - 에셋 URL [Required]
- * @param {boolean} isVideo - 영상 여부 [Optional, 기본값: false]
- *
- * Example usage:
- * <AssetCell label="s1.mp4" src={ src } isVideo />
- */
-function AssetCell({ label, src, isVideo = false }) {
+/** 파일 이름 아래에 크기와 등록 여부를 적는 캡션 */
+function AssetCaption({ item }) {
+  const used = REGISTERED.has(item.path);
   return (
-    <Stack spacing={ 0.75 }>
-      <Box
-        sx={ {
-          width: '100%',
-          backgroundColor: 'grey.100',
-          overflow: 'hidden',
-          position: 'relative',
-          lineHeight: 0,
-        } }
-      >
-        { isVideo ? (
-          <Box
-            component="video"
-            src={ src }
-            controls
-            muted
-            playsInline
-            preload="metadata"
-            sx={ { width: '100%', height: 'auto', display: 'block' } }
-          />
-        ) : (
-          <Box
-            component="img"
-            src={ src }
-            alt={ label }
-            loading="lazy"
-            sx={ { width: '100%', height: 'auto', display: 'block' } }
-          />
-        ) }
-      </Box>
+    <Stack spacing={ 0.25 }>
       <Typography
         variant="caption"
         sx={ {
@@ -172,38 +113,121 @@ function AssetCell({ label, src, isVideo = false }) {
           whiteSpace: 'nowrap',
         } }
       >
-        { label }
+        { item.name }
+      </Typography>
+      <Typography
+        variant="caption"
+        sx={ { fontSize: 10, color: used ? 'success.dark' : 'text.disabled' } }
+      >
+        { used ? '사용' : '미등록' } · { toMb(item.bytes) }
       </Typography>
     </Stack>
   );
 }
 
 /**
- * 등록되지 않은 파일 목록 표
+ * 이미지 한 칸. 고정 비율 안에서 잘라 보여 준다
  *
  * Props:
- * @param {array} rows - 파일 이름과 위치, 설명을 담은 배열 [Required]
+ * @param {object} item - 인벤토리 항목 [Required]
  *
  * Example usage:
- * <UnregisteredTable rows={ UNREGISTERED } />
+ * <ImageCell item={ item } />
  */
-function UnregisteredTable({ rows }) {
+function ImageCell({ item }) {
+  const src = assetUrl(item);
   return (
-    <TableContainer sx={ { mb: 4 } }>
+    <Stack spacing={ 0.75 }>
+      <Box
+        sx={ {
+          width: '100%',
+          aspectRatio: '4 / 3',
+          backgroundColor: 'grey.100',
+          overflow: 'hidden',
+        } }
+      >
+        { src && (
+          <Box
+            component="img"
+            src={ src }
+            alt={ item.name }
+            loading="lazy"
+            sx={ { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } }
+          />
+        ) }
+      </Box>
+      <AssetCaption item={ item } />
+    </Stack>
+  );
+}
+
+/**
+ * 영상 한 칸. 큰 파일은 미리 받지 않는다
+ *
+ * Props:
+ * @param {object} item - 인벤토리 항목 [Required]
+ *
+ * Example usage:
+ * <VideoCell item={ item } />
+ */
+function VideoCell({ item }) {
+  const src = assetUrl(item);
+  const heavy = item.bytes > HEAVY_BYTES;
+  return (
+    <Stack spacing={ 0.75 }>
+      <Box sx={ { width: '100%', aspectRatio: '4 / 3', backgroundColor: 'grey.100', overflow: 'hidden' } }>
+        { src && (
+          <Box
+            component="video"
+            src={ src }
+            controls
+            muted
+            playsInline
+            preload={ heavy ? 'none' : 'metadata' }
+            sx={ { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } }
+          />
+        ) }
+      </Box>
+      <AssetCaption item={ item } />
+      { heavy && (
+        <Typography variant="caption" sx={ { fontSize: 10, color: 'warning.dark' } }>
+          5MB 초과라 재생을 눌러야 받는다
+        </Typography>
+      ) }
+    </Stack>
+  );
+}
+
+/**
+ * 서체와 미리보기가 없는 파일 표
+ *
+ * Props:
+ * @param {array} items - 인벤토리 항목 배열 [Required]
+ *
+ * Example usage:
+ * <FileTable items={ fonts } />
+ */
+function FileTable({ items }) {
+  return (
+    <TableContainer sx={ { mb: 6 } }>
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell sx={ { fontWeight: 600, width: '30%' } }>file</TableCell>
-            <TableCell sx={ { fontWeight: 600, width: '20%' } }>dir</TableCell>
-            <TableCell sx={ { fontWeight: 600 } }>note</TableCell>
+            <TableCell sx={ { fontWeight: 600, width: '45%' } }>file</TableCell>
+            <TableCell sx={ { fontWeight: 600, width: 90 } }>kind</TableCell>
+            <TableCell sx={ { fontWeight: 600, width: 90 } }>size</TableCell>
+            <TableCell sx={ { fontWeight: 600 } }>등록</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          { rows.map((r) => (
-            <TableRow key={ r.name }>
-              <TableCell sx={ { fontFamily: 'monospace', fontSize: 12 } }>{ r.name }</TableCell>
-              <TableCell sx={ { fontFamily: 'monospace', fontSize: 12 } }>{ r.dir }</TableCell>
-              <TableCell sx={ { fontSize: 13, color: 'text.secondary' } }>{ r.note }</TableCell>
+          { items.map((item) => (
+            <TableRow key={ item.path }>
+              <TableCell sx={ { fontFamily: 'monospace', fontSize: 12 } }>{ item.name }</TableCell>
+              <TableCell sx={ { fontFamily: 'monospace', fontSize: 12 } }>{ item.kind }</TableCell>
+              <TableCell sx={ { fontFamily: 'monospace', fontSize: 12 } }>{ toMb(item.bytes) }</TableCell>
+              <TableCell sx={ { fontSize: 12, color: 'text.secondary' } }>
+                { REGISTERED.has(item.path) ? '사용' : '미등록' }
+              </TableCell>
             </TableRow>
           )) }
         </TableBody>
@@ -212,17 +236,56 @@ function UnregisteredTable({ rows }) {
   );
 }
 
-/** 에셋 카탈로그 */
+/** 폴더 한 절 */
+function FolderSection({ groupKeyName, items }) {
+  const images = items.filter((i) => i.kind === 'image');
+  const videos = items.filter((i) => i.kind === 'video');
+  const others = items.filter((i) => i.kind !== 'image' && i.kind !== 'video');
+  const bytes = items.reduce((sum, i) => sum + i.bytes, 0);
+  const note = FOLDER_NOTES[groupKeyName] || '';
+
+  return (
+    <Box>
+      <SectionTitle
+        title={ `${groupKeyName} · ${items.length}건 · ${toMb(bytes)}` }
+        description={ `이미지 ${images.length} · 영상 ${videos.length} · 기타 ${others.length}${note ? ` · ${note}` : ''}` }
+      />
+      { images.length > 0 && (
+        <Grid container spacing={ 2 } sx={ { mb: videos.length || others.length ? 3 : 6 } }>
+          { images.map((item) => (
+            <Grid key={ item.path } size={ { xs: 6, sm: 4, md: 3 } }>
+              <ImageCell item={ item } />
+            </Grid>
+          )) }
+        </Grid>
+      ) }
+      { videos.length > 0 && (
+        <Grid container spacing={ 2 } sx={ { mb: others.length ? 3 : 6 } }>
+          { videos.map((item) => (
+            <Grid key={ item.path } size={ { xs: 12, sm: 6, md: 4 } }>
+              <VideoCell item={ item } />
+            </Grid>
+          )) }
+        </Grid>
+      ) }
+      { others.length > 0 && <FileTable items={ others } /> }
+    </Box>
+  );
+}
+
+/** 폴더별 에셋 카탈로그 */
 export const Default = {
   render: () => {
-    const registeredCount = ASSET_GROUPS.reduce((sum, g) => sum + g.items.length, 0);
+    const total = assetInventory.items.length;
+    const totalBytes = assetInventory.items.reduce((sum, i) => sum + i.bytes, 0);
+    const usedCount = assetInventory.items.filter((i) => REGISTERED.has(i.path)).length;
 
     return (
       <>
         <DocumentTitle
           title="Assets"
           status="Available"
-          note="구간별 사진과 영상, 그리고 등록되지 않은 파일"
+          note="폴더별 사진과 영상 전부, 그리고 서체 파일"
           brandName="Design System"
           systemName="Bellite"
           version="1.0"
@@ -232,44 +295,16 @@ export const Default = {
             Assets
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={ { mb: 1 } }>
-            <code>src/data/mediaAssets.js</code> · <code>src/assets/</code>
+            <code>src/data/assetInventory.js</code> · 재생성: <code>pnpm generate-assets</code>
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={ { mb: 4 } }>
-            사용 중 판정 기준은 <code>mediaAssets.js</code> 등록 여부다. 등록된 { registeredCount }건을 구간별로 먼저 보이고,
-            등록되지 않은 3건을 아래 표로 내린다. 모든 미디어는 원본 비율 그대로 표시하고, 영상은 자동 재생 대신 컨트롤로 연다.
+            파일 { total }건 { toMb(totalBytes) } 전부를 폴더 순서대로 그린다. 그중 { usedCount }건이 <code>mediaAssets.js</code>에 등록되어 있고
+            나머지는 미등록이다. 이미지는 4:3 고정 칸에 맞춰 잘라 보여 주고, 영상은 컨트롤로 연다. 5MB를 넘는 영상은 미리 받지 않는다.
           </Typography>
 
-          <Typography variant="h5" sx={ { fontWeight: 700, mt: 2, mb: 2 } }>
-            Registered in mediaAssets.js
-          </Typography>
-
-          { ASSET_GROUPS.map((group) => (
-            <Box key={ group.dir }>
-              <SectionTitle
-                title={ `${group.label} · ${group.items.length}건` }
-                description={ `${group.dir} · ${group.note}` }
-              />
-              <Grid container spacing={ 3 } sx={ { mb: 6 } }>
-                { group.items.map((item) => (
-                  <Grid key={ item.name } size={ { xs: 12, sm: 6, md: 4 } }>
-                    <AssetCell
-                      label={ item.large ? `${item.name} (5MB 초과, ?url)` : item.name }
-                      src={ item.src }
-                      isVideo={ item.kind === 'video' }
-                    />
-                  </Grid>
-                )) }
-              </Grid>
-            </Box>
+          { GROUP_ORDER.filter((key) => GROUPS[key]).map((key) => (
+            <FolderSection key={ key } groupKeyName={ key } items={ GROUPS[key] } />
           )) }
-
-          <Typography variant="h5" sx={ { fontWeight: 700, mt: 4, mb: 2, color: 'text.secondary' } }>
-            Unregistered
-          </Typography>
-          <Typography variant="body2" color="text.secondary" sx={ { mb: 3 } }>
-            <code>mediaAssets.js</code> 에 등록되지 않은 파일이다. 서체 두 개는 스타일시트가 직접 불러오고, 나머지 하나는 어디에서도 쓰지 않는다.
-          </Typography>
-          <UnregisteredTable rows={ UNREGISTERED } />
         </PageContainer>
       </>
     );

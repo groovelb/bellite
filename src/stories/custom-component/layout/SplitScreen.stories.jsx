@@ -17,7 +17,7 @@ import {
 } from '../../../components/layout/SplitScreen';
 
 export default {
-  title: 'Custom Component/Layout/SplitScreen',
+  title: 'Component/8. Layout/SplitScreen',
   component: SplitScreen,
   tags: ['autodocs'],
   parameters: {

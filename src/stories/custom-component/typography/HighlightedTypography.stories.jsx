@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import { HighlightedTypography, Highlight } from '../../../components/typography';
 
 export default {
-  title: 'Custom Component/Typography/HighlightedTypography',
+  title: 'Component/1. Typography/HighlightedTypography',
   component: HighlightedTypography,
   tags: ['autodocs'],
   parameters: {

@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "generate-structure": "node scripts/generate-project-structure.js"
+    "generate-structure": "node scripts/generate-project-structure.js",
+    "generate-assets": "node scripts/generate-asset-inventory.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

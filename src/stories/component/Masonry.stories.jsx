@@ -42,7 +42,7 @@ const ImageItem = styled(Box)({
 });
 
 export default {
-  title: 'MUI Component/Layout/Masonry',
+  title: 'Component/8. Layout/Masonry',
   component: Masonry,
   tags: ['autodocs'],
   parameters: {

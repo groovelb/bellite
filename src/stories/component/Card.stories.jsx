@@ -12,7 +12,7 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
 export default {
-  title: 'MUI Component/Card/Card',
+  title: 'Component/3. Card/Card',
   component: Card,
   tags: ['autodocs'],
   parameters: {

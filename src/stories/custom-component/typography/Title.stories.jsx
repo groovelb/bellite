@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import { Title } from '../../../components/typography';
 
 export default {
-  title: 'Custom Component/Typography/Title',
+  title: 'Component/1. Typography/Title',
   component: Title,
   tags: ['autodocs'],
   parameters: {

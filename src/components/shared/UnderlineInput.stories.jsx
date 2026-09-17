@@ -3,7 +3,7 @@ import Stack from '@mui/material/Stack';
 import UnderlineInput from './UnderlineInput';
 
 export default {
-  title: 'Custom Component/UnderlineInput',
+  title: 'Custom Component/Shared/UnderlineInput',
   component: UnderlineInput,
   tags: ['autodocs'],
   parameters: {

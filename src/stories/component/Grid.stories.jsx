@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import { GridContent } from '../../components/storybookDocumentation';
 
 export default {
-  title: 'MUI Component/Layout/Grid',
+  title: 'Component/8. Layout/Grid',
   component: Grid,
   tags: ['autodocs'],
   parameters: {

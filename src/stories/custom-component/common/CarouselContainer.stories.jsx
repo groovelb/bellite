@@ -55,7 +55,7 @@ function IndexChangeDemo() {
 }
 
 export default {
-  title: 'Custom Component/Common/CarouselContainer',
+  title: 'Component/2. Container/CarouselContainer',
   component: CarouselContainer,
   tags: ['autodocs'],
   parameters: {

@@ -4,7 +4,7 @@
  * 수동 편집 금지. 재생성: pnpm generate-structure
  */
 export default {
-  "generatedAt": "2026-09-17T09:16:36.560Z",
+  "generatedAt": "2026-09-17T09:51:35.378Z",
   "root": {
     "name": "App",
     "kind": "component",
@@ -26,8 +26,8 @@ export default {
             "kind": "component",
             "category": "components/navigation",
             "file": "components/navigation/GNB.jsx",
-            "storyTitle": null,
-            "storyId": null,
+            "storyTitle": "Custom Component/Navigation/GNB",
+            "storyId": "custom-component-navigation-gnb",
             "children": [],
             "hooks": [],
             "data": [
@@ -50,8 +50,8 @@ export default {
                 "kind": "component",
                 "category": "components/layout",
                 "file": "components/layout/SplitScreen.jsx",
-                "storyTitle": null,
-                "storyId": null,
+                "storyTitle": "Component/8. Layout/SplitScreen",
+                "storyId": "component-8-layout-splitscreen",
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -72,8 +72,8 @@ export default {
                 "kind": "component",
                 "category": "components/media",
                 "file": "components/media/VideoScrubbing.jsx",
-                "storyTitle": null,
-                "storyId": null,
+                "storyTitle": "Custom Component/Media/VideoScrubbing",
+                "storyId": "custom-component-media-videoscrubbing",
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -126,8 +126,8 @@ export default {
                 "kind": "component",
                 "category": "components/layout",
                 "file": "components/layout/LineGrid.jsx",
-                "storyTitle": null,
-                "storyId": null,
+                "storyTitle": "Custom Component/Layout/LineGrid",
+                "storyId": "custom-component-layout-linegrid",
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -176,8 +176,8 @@ export default {
                 "kind": "component",
                 "category": "components/typography",
                 "file": "components/typography/MarqueeText.jsx",
-                "storyTitle": null,
-                "storyId": null,
+                "storyTitle": "Custom Component/Typography/MarqueeText",
+                "storyId": "custom-component-typography-marqueetext",
                 "children": [],
                 "hooks": [],
                 "data": []
@@ -273,8 +273,8 @@ export default {
             "kind": "component",
             "category": "sections/landing",
             "file": "sections/landing/DailyMoodSection.jsx",
-            "storyTitle": null,
-            "storyId": null,
+            "storyTitle": "Section/Landing/DailyMoodSection",
+            "storyId": "section-landing-dailymoodsection",
             "children": [
               {
                 "name": "SectionContainer",
@@ -291,8 +291,8 @@ export default {
                 "kind": "component",
                 "category": "components/layout",
                 "file": "components/layout/BrokenGridGallery.jsx",
-                "storyTitle": null,
-                "storyId": null,
+                "storyTitle": "Custom Component/Layout/BrokenGridGallery",
+                "storyId": "custom-component-layout-brokengridgallery",
                 "children": [],
                 "hooks": [],
                 "data": []

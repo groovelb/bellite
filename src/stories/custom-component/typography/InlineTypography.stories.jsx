@@ -10,7 +10,7 @@ import {
 } from '../../../components/typography';
 
 export default {
-  title: 'Custom Component/Typography/InlineTypography',
+  title: 'Component/1. Typography/InlineTypography',
   component: InlineTypography,
   tags: ['autodocs'],
   parameters: {

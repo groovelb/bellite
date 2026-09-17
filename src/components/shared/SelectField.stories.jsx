@@ -28,7 +28,7 @@ const heightOptions = [
 ];
 
 export default {
-  title: 'Custom Component/shared/SelectField',
+  title: 'Custom Component/Shared/SelectField',
   component: SelectField,
   tags: ['autodocs'],
   parameters: {

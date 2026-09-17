@@ -12,7 +12,7 @@ import { ImageCarousel } from '../../../components/media/ImageCarousel';
 import { CarouselIndicator } from '../../../components/media/CarouselIndicator';
 
 export default {
-  title: 'Custom Component/Media/ImageCarousel',
+  title: 'Component/4. Media/ImageCarousel',
   component: ImageCarousel,
   tags: ['autodocs'],
   parameters: {

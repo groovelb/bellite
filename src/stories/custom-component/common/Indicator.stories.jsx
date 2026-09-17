@@ -64,7 +64,7 @@ function AllVariantsDemo() {
 }
 
 export default {
-  title: 'Custom Component/Common/Indicator',
+  title: 'Common/Indicator',
   component: Indicator,
   tags: ['autodocs'],
   parameters: {

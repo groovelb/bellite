@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import Breadcrumb from './Breadcrumb';
 
 export default {
-  title: 'Custom Component/shared/Breadcrumb',
+  title: 'Custom Component/Shared/Breadcrumb',
   component: Breadcrumb,
   tags: ['autodocs'],
   parameters: {

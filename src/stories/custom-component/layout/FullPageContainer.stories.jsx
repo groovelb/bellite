@@ -16,7 +16,7 @@ import {
 } from '../../../components/layout/FullPageContainer';
 
 export default {
-  title: 'Custom Component/Layout/FullPageContainer',
+  title: 'Component/8. Layout/FullPageContainer',
   component: FullPageContainer,
   tags: ['autodocs'],
   parameters: {

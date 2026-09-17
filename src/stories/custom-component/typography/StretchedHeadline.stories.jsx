@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import { StretchedHeadline, StretchedHeadlineMultiline } from '../../../components/typography';
 
 export default {
-  title: 'Custom Component/Typography/StretchedHeadline',
+  title: 'Component/1. Typography/StretchedHeadline',
   component: StretchedHeadline,
   tags: ['autodocs'],
   parameters: {

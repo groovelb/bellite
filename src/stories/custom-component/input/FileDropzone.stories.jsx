@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import { FileDropzone } from '../../../components/input/FileDropzone';
 
 export default {
-  title: 'Custom Component/Input/FileDropzone',
+  title: 'Component/7. Input & Control/FileDropzone',
   component: FileDropzone,
   tags: ['autodocs'],
   parameters: {
